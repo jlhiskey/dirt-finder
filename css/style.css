@@ -1,0 +1,18 @@
+header{
+    position:relative;
+}
+
+.title{
+    position:absolute;
+    font-size: 60px;
+    font-family: DDC Hardware Compressed;
+}
+
+.nav-bar{
+    position: absolute;
+    font-family: DDCHardware-Compressedotf;
+    font-size: 25px;
+    top: 100px;
+}
+
+
