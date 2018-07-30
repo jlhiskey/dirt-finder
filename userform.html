@@ -13,16 +13,42 @@
 
 
 <body>
+
+  <header>
   <nav class='nav-bar'>
     <a href='index.html'>Home</a>
     <a href='pinform.html'>Have/Want</a>
     <a href='map.html'>Map</a>
     <a href='about.html'>About</a>
     <a href='userform.html'>Placeholder</a>
-
-
   </nav>
+  </header>
+
+  <main class="container">
+    <div class="new-user-intro">  
+        <h2>Create New Account</h2>
+        <p>Welcome to DirtFinder. Please create a new user account below.</p>
+    </div>
+      <div class="user-pin-form">        
+        
+        <form id="new-user-form">
+    
+            What is Your Name?:<input name="userName" type="text" placeholder="User Name"> <br>
+            What is your Phone Number?:<input name="userPhoneNumber" type="tel" placeholder="Phone Number"><br>
+            What's Your Company's Name?:<input name="companyName" type="text" placeholder="Company Name"><br>
+            What's Your Email?:<input name="userEmail" type="email" placeholder="Email Address"><br>
+          Create a New Password: <input name="userPassword" type="password" placeholder="Password">
+         <div class="have-need"> 
+          <button type="submit" class="have">HAVE</button>
+          <button type="submit" class="need">NEED</button>
+          <button type="submit" class="map">MAP</button>
+        </div>
+        </form>
+      </div>
+      </main>
+  
   <script src=js/app.js></script>
+  <script src=js/form.js></script>
 </body>
 
 </html>

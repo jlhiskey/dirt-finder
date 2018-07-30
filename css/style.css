@@ -1,0 +1,31 @@
+
+header{
+    position:relative;
+}
+
+.title{
+    position:absolute;
+    font-size: 60px;
+    font-family: DDC Hardware Compressed;
+}
+
+.nav-bar{
+    position: absolute;
+    font-family: DDCHardware-Compressedotf;
+    font-size: 25px;
+    top: 100px;
+}
+
+.maplegendsides{
+  display:flex;
+}
+#map {
+  flex: 60%;
+  height: 400px;
+}
+.legend{
+  flex: 30%;
+  height: 200px;
+  border: 2px solid blue;
+}
+
