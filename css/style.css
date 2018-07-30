@@ -1,0 +1,12 @@
+.maplegendsides{
+  display:flex;
+}
+#map {
+  flex: 60%;
+  height: 400px;
+}
+.legend{
+  flex: 30%;
+  height: 200px;
+  border: 2px solid blue;
+}
