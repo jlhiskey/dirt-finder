@@ -13,6 +13,7 @@
 
 
 <body>
+  <header>
   <nav class='nav-bar'>
     <a href='index.html'>Home</a>
     <a href='pinform.html'>Have/Want</a>
@@ -22,7 +23,16 @@
 
 
   </nav>
-  <script src=js/app.js></script>
+</header>
+<main>
+  <h1>Should show up a map of seattle when this is done</h1>
+  <div id="map">
+
+  </div>
+</main>
+  <script src='js/map.js'></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1lqNI3XYdF9yzdm3HCww8MX3IKElBNN4&callback=initMap">
+  </script>
 </body>
 
 </html>
