@@ -1,31 +1,22 @@
 'use strict';
 var userList = [];
-var userAuth = false;
 var activeUser = [];
 
 function initData(){
-if (localStorage.getItem('users')){
-  var usedList = JSON.parse(localStorage.getItem('users'))
-  for (var idx in usedList){
-    new User(usedList[idx].userName, usedList[idx].userPhoneNumber, usedList[idx].pinCompanyName, usedList[idx].userEmail, usedList[idx].userPassword);
-    userList[idx].pinform = usedList[idx].pinform; 
+  if (localStorage.getItem('users')){
+    var usedList = JSON.parse(localStorage.getItem('users'))
+    for (var idx in usedList){
+      new User(usedList[idx].userName, usedList[idx].userPhoneNumber, usedList[idx].pinCompanyName, usedList[idx].userEmail, usedList[idx].userPassword);
+      userList[idx].pinform = usedList[idx].pinform; 
+    }
+  } else {
+    userList = [];
   }
-} else {
-  userList = [];
-}
+
 }
 initData();
-/* function login(){
-  //changes user to being logged in, gives access to create pinform
-  if (userAuth === false) {
-    userAuth = true;
-    for (var idx in userList){
-      if (userList[idx].findIndex())
-    
-  } else {
-    userAuth = false;
-  }
-} */
+
+
 
 
 function User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword) {
@@ -74,4 +65,6 @@ jim.pinform.pinHaveNeed = 'Need';
 jim.pinform.pinQuantity = '400kg';
 jim.pinform.pinDirtType = 'Topsoil';
 jim.pinform.pinDensity = 'unknown';
-jim.pinform.pinAvailability = 'now'; */
+jim.pinform.pinAvailability = 'now';
+
+
