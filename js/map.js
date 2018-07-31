@@ -1,7 +1,8 @@
 'use strict';
 var geocoder; 
 var map;
-
+var userList;
+initData();
 
 function initMap() {
   //hardcoded seattle as a default layback
