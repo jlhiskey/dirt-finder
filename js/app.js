@@ -57,3 +57,12 @@ function makeUser(){
 }
 
 var jim = new User('JimBob420', 'JimBob420@gmail.com', 'JimmyEatWorld', 'Boeing', '420-420-6969');
+
+jim.pinform.pinName = jim.userName;
+jim.pinform.pinEmail = jim.userEmail;
+jim.pinform.pinAddress = 'Placeholder Address';
+jim.pinform.pinHaveNeed = 'Need';
+jim.pinform.pinQuantity = '400kg';
+jim.pinform.pinDirtType = 'Topsoil';
+jim.pinform.pinDensity = 'unknown';
+jim.pinform.pinAvailability = 'now';
