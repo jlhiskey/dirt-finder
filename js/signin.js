@@ -13,6 +13,8 @@ signIn.addEventListener('submit', function(event){
 
   if(useremail === jim.userEmail && password === jim.userPassword){
     //login();
+    window.location.assign('index.html');
+    var authentication = true;
   }
   else return alert('Incorrect Username or Password');
 });
