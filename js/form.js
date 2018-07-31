@@ -16,7 +16,7 @@ userFormEl.addEventListener('submit', function(event) { //when submit is clicked
     alert('User Name, User Email and User Password are Required Fields');
   } else {
     new User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword); //where to put the input data
-    window.location.assign('signin.html')
+    window.location.assign('signin.html');
 
   }
   console.log('user form submit button');
@@ -42,6 +42,7 @@ pinFormEl.addEventListener('submit', function(event) { //when submit is clicked 
     alert('Pin Name, Pin Email and Address are Required Fields');
   } else {
     userList[0].makePin(pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability); //where to put the input data
+    window.location.assign('map.html');
   }
   
   console.log('pin form submit button');
