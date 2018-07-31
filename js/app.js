@@ -1,37 +1,64 @@
 'use strict';
 var userList = [];
+var userAuth = false;
+var activeUser = [];
 
+function initData(){
+if (localStorage.getItem('users')){
+  var usedList = JSON.parse(localStorage.getItem('users'))
+  for (var idx in usedList){
+    new User(usedList[idx].userName, usedList[idx].userPhoneNumber, usedList[idx].pinCompanyName, usedList[idx].userEmail, usedList[idx].userPassword);
+    userList[idx].pinform = usedList[idx].pinform; 
+  }
+} else {
+  userList = [];
+}
+}
+initData();
 function login(){
   //changes user to being logged in, gives access to create pinform
+  if (userAuth === false) {
+    userAuth = true;
+    for (var idx in userList){
+      if (userList[idx].findIndex())
+    }
+    activeUser = ;
+  } else {
+    userAuth = false;
+  }
 }
 
 
-function User(user,email,pass,company,phone){
-  this.userName = user;
-  this.userEmail = email;
-  this.userPassword = pass;
-  this.userCompany= company;
-  this.userPhoneNumber= phone;
-  this.pinform = {
-    pinName:'',
-    pinEmail: '',
-    pinAddress: '',
-    pinHaveNeed: '',
-    pinQuantity: '',
-    pinDirtType: '',
-    pinDensity: '',
-    pinAvailability: '',
-
-  };
+function User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword) {
+  this.userName = userName;
+  this.userPhoneNumber = userPhoneNumber;
+  this.userCompanyName = userCompanyName;
+  this.userEmail = userEmail;
+  this.userPassword = userPassword;
+  this.pinform = [];
+  
   userList.push(this);
 }
 
 
-function userAuth(){
+function userAuthen(){
   //if user accesses h/n buttons, checks if user is logged in. if, allows user to progress and calls pinform creator, if not, redirs user to creation
 }
 
-User.prototype.makePin = function() {
+User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability) {
+  var i = userList.length;
+  this.pinform[i].pinName = pinName;
+  this.pinform[i].pinPhoneNumber = pinPhoneNumber;
+  this.pinform[i].pinCompanyName = pinCompanyName;
+  this.pinform[i].pinEmail = pinEmail;
+  this.pinform[i].pinHaveNeed = pinHaveNeed;
+  this.pinform[i].pinAddress = pinAddress;
+  this.pinform[i].pinQuantity = pinQuantity;
+  this.pinform[i].pinDirtType = pinDirtType;
+  this.pinform[i].pinDensity = pinDensity;
+  this.pinform[i].pinAvaliability = pinAvaliability;
+  
+
   //taking in information from the page, generates a pin object with necessary fields name email address avail, within the user. pushes to their pinform array. 
 };
 
