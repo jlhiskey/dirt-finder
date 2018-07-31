@@ -22,22 +22,24 @@ function login(){
   //changes user to being logged in, gives access to create pinform
 }
 
-function User(user,email,pass,company,phone){
-  this.userName = user;
-  this.userEmail = email;
-  this.userPassword = pass;
-  this.userCompany= company;
-  this.userPhoneNumber= phone;
-  this.pinform = {
-    pinName:'',
-    pinEmail: '',
-    pinAddress: '',
-    pinHaveNeed: '',
-    pinQuantity: '',
-    pinDirtType: '',
-    pinDensity: '',
-    pinAvailability: '',
-  }
+function User(userName,userPhoneNumber,userCompanyName,userEmail,userPassword){
+  this.userName = userName;
+  this.userPhoneNumber = userPhoneNumber;
+  this.userCompanyName = userCompanyName;
+  this.userEmail = userEmail;
+  this.userPassword = userPassword;
+  this.pinform = function Pin(pinName,pinPhoneNumber,pinCompanyName,pinEmail,pinHaveNeed,pinAddress,pinQuantity,pinDirtType,pinDensity, pinAvaliability){
+    this.pinName = pinName;
+    this.pinPhoneNumber = pinPhoneNumber;
+    this.pinCompanyName = pinCompanyName;
+    this.pinEmail = pinEmail;
+    this.pinHaveNeed = pinHaveNeed;
+    this.pinAddress = pinAddress;
+    this.pinQuantity = pinQuantity;
+    this.pinDirtType = pinDirtType;
+    this.pinDensity = pinDensity;
+    this.pinAvaliability = pinAvaliability;
+  };
   userList.push(this);
 }
 
