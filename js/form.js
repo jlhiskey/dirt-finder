@@ -41,7 +41,7 @@ pinFormEl.addEventListener('submit', function(event) { //when submit is clicked 
   if ((pinName === '') || (pinEmail === '') || (pinAddress === ''))  {
     alert('Pin Name, Pin Email and Address are Required Fields');
   } else {
-    userList[0].makePin(pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability); //where to put the input data
+    activeUser.makePin(pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability); //where to put the input data
     window.location.assign('map.html');
   }
   

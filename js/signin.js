@@ -1,16 +1,12 @@
 'use strict';
 var userList = [];
-var passwordCredentials = [];
-var userAuth = false;
+var activeUser =  [];
 
 // eventListener to insure user has an account
+initData();
 
-var getCredentials = JSON.parse(localStorage.getItem('users'));
-passwordCredentials.push(getCredentials);
+userList = JSON.parse(localStorage.getItem('users'));
 
-
-
-console.log(passwordCredentials);
 
 var signIn = document.getElementById('sign-in');
 signIn.addEventListener('submit', function(event){
@@ -18,46 +14,29 @@ signIn.addEventListener('submit', function(event){
 
   var useremail = event.target.UserEmail.value;
   var password = event.target.UserPassword.value;
-
+  window.location.assign('index.html');
   console.log(useremail);
   console.log(password);
+  for (var idx in userList){
+   if( useremail === userList[idx].userEmail && password === userList[idx].userPassword){
+     activeUser = userList[idx]
+   }
+  }
+  console.log(activeUser);
+});
 
-
-  console.log(passwordCredentials[0]);
+  /* console.log(passwordCredentials[0]);
   for(var i = 0; i < passwordCredentials[0].length; i++){
     console.log(passwordCredentials[0][i]);
     console.log('here');
     if(useremail === passwordCredentials[0][i].userEmail && password === passwordCredentials[0][i].userPassword){
       console.log('here');
       //login();
-      userAuth = true;
-      window.location.assign('index.html');
-    }
+      /* activeUser = userList[i]
+      localStorage.setItem('activeuser', JSON.stringify(activeUser)); */
+      
+   /*  } 
   }
 
   if (!userAuth) alert('Incorrect Username or Password');
-});
-
-
-
-function User(user,email,pass,company,phone){
-  this.userName = user;
-  this.userEmail = email;
-  this.userPassword = pass;
-  this.userCompany = company;
-  this.userPhoneNumber = phone;
-  this.pinform = {
-    pinName:'',
-    pinEmail: '',
-    pinAddress: '',
-    pinHaveNeed: '',
-    pinQuantity: '',
-    pinDirtType: '',
-    pinDensity: '',
-    pinAvailability: '',
-  };
-  userList.push(this);
-}
-
-
-var jim = new User('JimBob420', 'JimBob420@gmail.com', 'JimmyEatWorld', 'Boeing', '420-420-6969');
+});*/
