@@ -1,14 +1,11 @@
 'use strict';
-var userList = [];
+var activeUser = [];
 var passwordCredentials = [];
 var userAuth = false;
 
 // eventListener to insure user has an account
 
-var getCredentials = JSON.parse(localStorage.getItem('users'));
-passwordCredentials.push(getCredentials);
-
-
+passwordCredentials = JSON.parse(localStorage.getItem('users'));
 
 console.log(passwordCredentials);
 
@@ -23,41 +20,19 @@ signIn.addEventListener('submit', function(event){
   console.log(password);
 
 
-  console.log(passwordCredentials[0]);
-  for(var i = 0; i < passwordCredentials[0].length; i++){
-    console.log(passwordCredentials[0][i]);
+  console.log(passwordCredentials);
+  for(var i = 0; i < passwordCredentials.length; i++){
     console.log('here');
-    if(useremail === passwordCredentials[0][i].userEmail && password === passwordCredentials[0][i].userPassword){
+    if(useremail === passwordCredentials[i].userEmail && password === passwordCredentials[i].userPassword){
       console.log('here');
       //login();
       userAuth = true;
+      activeUser = passwordCredentials[i];
       window.location.assign('index.html');
+      console.log(activeUser);
     }
   }
 
   if (!userAuth) alert('Incorrect Username or Password');
 });
 
-
-
-function User(user,email,pass,company,phone){
-  this.userName = user;
-  this.userEmail = email;
-  this.userPassword = pass;
-  this.userCompany = company;
-  this.userPhoneNumber = phone;
-  this.pinform = {
-    pinName:'',
-    pinEmail: '',
-    pinAddress: '',
-    pinHaveNeed: '',
-    pinQuantity: '',
-    pinDirtType: '',
-    pinDensity: '',
-    pinAvailability: '',
-  };
-  userList.push(this);
-}
-
-
-var jim = new User('JimBob420', 'JimBob420@gmail.com', 'JimmyEatWorld', 'Boeing', '420-420-6969');
