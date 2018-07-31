@@ -1,6 +1,5 @@
 'use strict';
 var geocoder; 
-var address;
 var map;
 
 
@@ -13,9 +12,7 @@ function initMap() {
   // The map, centered at seattle
   var map = new google.maps.Map(
     document.getElementById('map'), { zoom: 7, center: seattle});
-  // The marker, positioned at Seattle
-  var marker = new google.maps.Marker({ position: seattle, map: map });
-}
+  }
 
 //what this function does; inits the geocoder, to be used in codeAddress in conjunction with pinform.address 
 function geocode() {
@@ -27,7 +24,7 @@ function geocode() {
     center: latlng
   }
 }
-geocode();
+
 
 //what this function does is takes the address given and geocodes it into latlong to be used for inside google api.
 //TODO: implement this for loop to populate the map with pins based on userdata/hardcoded locations.
@@ -46,9 +43,9 @@ for (i = 0; i < locations.length; i++) {
       infowindow.open(map, marker);
     }
   })(marker, i)); */
-function codeAddress() {
+function codeAddress(user) {
   //var address = document.getElementById('address').value;
-  geocoder.geocode({ 'address': address }, function (results, status) {
+  geocoder.geocode({ 'address': user.pinform.pinAddress}, function (results, status) {
     if (status === 'OK') {
       map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
@@ -60,3 +57,7 @@ function codeAddress() {
     }
   });
 }
+
+initMap();
+geocode();
+// codeAddress(jim);
