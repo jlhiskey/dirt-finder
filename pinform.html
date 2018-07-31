@@ -27,23 +27,23 @@
   <main class="container">
     <div class="new-user-intro">  
         <h2>Create New Account</h2>
-        <p>Welcome to DirtFinder. Please create a new user account below.</p>
+        <p>Welcome USERNAME. Please create a import/export location below.</p>
     </div>
       <div class="user-pin-form">        
         
-        <form id="new-user-form">
+        <form id="new-pin-form" action='map.html'>
     
-          What is Your Name?:<input name="userName" type="text" placeholder="User Name"> <br>
-          What is your Phone Number?:<input name="userPhoneNumber" type="tel" placeholder="Phone Number"><br>
-          What's Your Company's Name?:<input name="companyName" type="text" placeholder="Company Name"><br>
-          What's Your Email?:<input name="userEmail" type="email" placeholder="Email Address"><br>
-          Have/Need Dirt:<input type="radio" name="have-need" value="have" checked> Have Dirt
-          <input type="radio" name="have-need" value="want"> Need Dirt
+          What is Your Name?:<input name="userName" type="text" placeholder="Site Superintendent Name"> <br>
+          What is your Phone Number?:<input name="userPhoneNumber" type="tel" placeholder="Site Superintendent Phone Number"><br>
+          What's Your Company's Name?:<input name="userCompanyName" type="text" placeholder="Site Superintendent Company Name"><br>
+          What's Your Email?:<input name="userEmail" type="email" placeholder="Site Superintendent Email Address"><br>
+          Have/Need Dirt:<input type="radio" name="pinHaveNeed" value="have" checked> Have Dirt
+          <input type="radio" name="pinHaveNeed" value="want"> Need Dirt
           Where is the Site Located?:<input name="pinAddress" type="text" placeholder="Site Address">  <br>       
           How Much Dirt Do You Have? (cu. yards): <input name="pinQuantity" type="number" placeholder="Amount of Material"><br>
-          What Type of Dirt: <input type="radio" name="dirtType" value="structural" checked> Structural Material
-          <input type="radio" name="dirtType" value="base"> Base Material
-          <input type="radio" name="dirtType" value="topsoil" checked> Topsoil Material<br>
+          What Type of Dirt: <input type="radio" name="pinDirtType" value="structural" checked> Structural Material
+          <input type="radio" name="pinDirtType" value="base"> Base Material
+          <input type="radio" name="pinDirtType" value="topsoil" checked> Topsoil Material<br>
           Estimated Density (pcf):<input name="pinDensity" type="number" placeholder="Estimated Density"><br> 
           Date import/export can begin: <input name="pinAvaliability" type="date" placeholder="Date import/export can begin"> <br>
       
