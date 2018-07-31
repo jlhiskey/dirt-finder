@@ -1,12 +1,14 @@
+'use strict';
 var geocoder; 
 var address;
-var map
+var map;
+
 
 function initMap() {
   //hardcoded seattle as a default layback
-    var seattle = {
-      lat: 47.6062, 
-      lng: -122.3321
+  var seattle = {
+    lat: 47.6062, 
+    lng: -122.3321
   };
   // The map, centered at seattle
   var map = new google.maps.Map(
