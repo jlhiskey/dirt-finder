@@ -19,6 +19,8 @@ signIn.addEventListener('submit', function(event){
   else return alert('Incorrect Username or Password');
 });
 
+
+
 function User(user,email,pass,company,phone){
   this.userName = user;
   this.userEmail = email;
