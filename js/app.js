@@ -1,26 +1,10 @@
 'use strict';
 var userList = [];
-/* // eventListener to insure user has an account
-var signIn = document.getElementById('sign-in');
-signIn.addEventListener('submit', function(event){
-  event.preventDefault();
 
-  var useremail = event.target.UserEmail.value;
-  var password = event.target.UserPassword.value;
-
-  console.log(useremail);
-  console.log(password);
-
-//   if(useremail === localStorage){
-//     return alert('Incorrect Username or Password');
-//   }
-//   else if(password === localStorage){
-//     return alert('Incorrect Username or Password');
-//   }
-}); */
 function login(){
   //changes user to being logged in, gives access to create pinform
 }
+
 
 function User(user,email,pass,company,phone){
   this.userName = user;
@@ -37,11 +21,10 @@ function User(user,email,pass,company,phone){
     pinDirtType: '',
     pinDensity: '',
     pinAvailability: '',
-  }
+
+  };
   userList.push(this);
 }
-
-  
 
 
 function userAuth(){
@@ -50,7 +33,7 @@ function userAuth(){
 
 User.prototype.makePin = function() {
   //taking in information from the page, generates a pin object with necessary fields name email address avail, within the user. pushes to their pinform array. 
-}
+};
 
 function makeUser(){
   //taking in information from the page, generates a User and sets it to logged in. pushes it to userList array to be stored into local storage.
