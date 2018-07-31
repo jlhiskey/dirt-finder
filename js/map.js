@@ -58,6 +58,10 @@ function codeAddress(user) {
   });
 }
 
+for (var idx in userList.length){
+  codeAddress(userList[idx]);
+}
+
 initMap();
 geocode();
 // codeAddress(jim);

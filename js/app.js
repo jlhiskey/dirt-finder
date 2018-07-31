@@ -15,18 +15,17 @@ if (localStorage.getItem('users')){
 }
 }
 initData();
-function login(){
+/* function login(){
   //changes user to being logged in, gives access to create pinform
   if (userAuth === false) {
     userAuth = true;
     for (var idx in userList){
       if (userList[idx].findIndex())
-    }
-    activeUser = ;
+    
   } else {
     userAuth = false;
   }
-}
+} */
 
 
 function User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword) {
@@ -66,7 +65,7 @@ function makeUser(){
   //taking in information from the page, generates a User and sets it to logged in. pushes it to userList array to be stored into local storage.
 }
 
-var jim = new User('JimBob420', 'JimBob420@gmail.com', 'JimmyEatWorld', 'Boeing', '420-420-6969');
+/* var jim = new User('JimBob420', 'JimBob420@gmail.com', 'JimmyEatWorld', 'Boeing', '420-420-6969');
 
 jim.pinform.pinName = jim.userName;
 jim.pinform.pinEmail = jim.userEmail;
@@ -75,4 +74,4 @@ jim.pinform.pinHaveNeed = 'Need';
 jim.pinform.pinQuantity = '400kg';
 jim.pinform.pinDirtType = 'Topsoil';
 jim.pinform.pinDensity = 'unknown';
-jim.pinform.pinAvailability = 'now';
+jim.pinform.pinAvailability = 'now'; */

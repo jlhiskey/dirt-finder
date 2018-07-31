@@ -1,6 +1,6 @@
 'use strict';
 
-
+initData();
 
 var userFormEl = document.getElementById('new-user-form'); // looks for the html id main-form
 userFormEl.addEventListener('submit', function(event) { //when submit is clicked run event this is below
