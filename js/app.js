@@ -11,10 +11,12 @@ signIn.addEventListener('submit', function(event){
   console.log(useremail);
   console.log(password);
 
-//   if(useremail === localStorage){
-//     return alert('Incorrect Username or Password');
-//   }
-//   else if(password === localStorage){
-//     return alert('Incorrect Username or Password');
-//   }
+  //   if(useremail !== localStorage){
+  //     return alert('Incorrect Username or Password');
+  //   }
+  //   else if(password !== localStorage){
+  //     return alert('Incorrect Username or Password');
+  //   }
+  
+  //location.replace('index.html');
 });
