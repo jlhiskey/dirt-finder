@@ -5,6 +5,7 @@ function login(){
   //changes user to being logged in, gives access to create pinform
 }
 
+
 function User(user,email,pass,company,phone){
   this.userName = user;
   this.userEmail = email;
@@ -20,6 +21,7 @@ function User(user,email,pass,company,phone){
     pinDirtType: '',
     pinDensity: '',
     pinAvailability: '',
+
   };
   userList.push(this);
 }
