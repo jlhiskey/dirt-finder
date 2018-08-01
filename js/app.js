@@ -1,10 +1,14 @@
 'use strict';
 var userList = [];
 var activeUser = [];
+
+// var userAuth = false;
+
 window.onload = function(){
   initData();
   console.log('list of users',userList );
 }
+
 
 
 function initData(){
@@ -33,9 +37,6 @@ function initData(){
 }
 
 
-
-
-
 function User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword) {
   this.userName = userName;
   this.userPhoneNumber = userPhoneNumber;
@@ -43,6 +44,7 @@ function User(userName, userPhoneNumber, userCompanyName, userEmail, userPasswor
   this.userEmail = userEmail;
   this.userPassword = userPassword;
   this.pinform = [];
+  this.userAuth = false;
   
   userList.push(this);
 }
@@ -68,6 +70,33 @@ User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinE
 
   //taking in information from the page, generates a pin object with necessary fields name email address avail, within the user. pushes to their pinform array. 
 };
+
+var userValidation = JSON.parse(localStorage.getItem('userAuth'));
+console.log(userValidation);
+var haveDirt = document.getElementById('have-need');
+haveDirt.addEventListener('click', function(event){
+
+  event.preventDefault();
+
+  if (userValidation === true){
+    window.location.assign('pinform.html');
+  }
+  else {
+    alert('Usermust Signin');
+    window.location.assign('signin.html');
+  }
+});
+
+
+var logout = document.getElementById('logout');
+logout.addEventListener('click', function(event){
+  event.preventDefault();
+
+  userValidation = false;
+  
+  alert('You have been logged out');
+});
+
 
 
 /* activeUser.makePin('thisisatest','4204206969','bigdickincorporated','diego@diego.com','Have','11122 Meridian Ave S','420','Topsoil','69','now')
