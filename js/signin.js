@@ -22,28 +22,31 @@ signIn.addEventListener('submit', function(event){
       console.log('this happened.');
       activeUser = userList[idx];
       localStorage.setItem('activeuser', JSON.stringify(userList));
+      console.log(userList);
       userAuth = true;
       localStorage.setItem('userAuth', JSON.stringify(userAuth));
+      window.location.assign('index.html');
     }
   }
+  if (!userAuth) alert('Incorrect Username or Password');
   console.log(userList);
+  console.log(userAuth);
 
-  window.location.assign('index.html');
 
 });
 
-/* console.log(passwordCredentials[0]);
-  for(var i = 0; i < passwordCredentials[0].length; i++){
-    console.log(passwordCredentials[0][i]);
-    console.log('here');
-    if(useremail === passwordCredentials[i].userEmail && password === passwordCredentials[i].userPassword){
-      console.log('here');
-      //login();
-      /* activeUser = userList[i]
-      localStorage.setItem('activeuser', JSON.stringify(activeUser)); */
+// console.log(passwordCredentials[0]);
+//   for(var i = 0; i < passwordCredentials[0].length; i++){
+//      console.log(passwordCredentials[0][i]);
+//      console.log('here');
+//      if(useremail === passwordCredentials[i].userEmail && password === passwordCredentials[i].userPassword){
+//        console.log('here');
+//        login();
+//        activeUser = userList[i]
+//        localStorage.setItem('activeuser', JSON.stringify(activeUser)); */
       
-/*  } 
-  }
+//  } 
+//    }
 
-  if (!userAuth) alert('Incorrect Username or Password');
-});*/
+//   if (!userAuth) alert('Incorrect Username or Password');
+//  });
