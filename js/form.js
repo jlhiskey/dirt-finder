@@ -42,15 +42,15 @@ pinFormEl.addEventListener('submit', function(event) { //when submit is clicked 
     alert('Pin Name, Pin Email and Address are Required Fields');
   } else {
     activeUser.makePin(pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability);
-     //where to put the input data
-     for (var idx in userList){
-       if (userList[idx].userName === activeUser.userName){
-         console.log('yes')
-         userList[idx].pinform = activeUser.pinform;
-         localStorage.setItem('users', JSON.stringify(userList));
-         localStorage.setItem('activeuser', JSON.stringify(activeUser));
-       }
-     }
+    //where to put the input data
+    for (var idx in userList){
+      if (userList[idx].userName === activeUser.userName){
+        console.log('yes')
+        userList[idx].pinform = activeUser.pinform;
+        localStorage.setItem('users', JSON.stringify(userList));
+        localStorage.setItem('activeuser', JSON.stringify(activeUser));
+      }
+    }
     
   }
   

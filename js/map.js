@@ -1,5 +1,5 @@
 'use strict';
-var geocoder; 
+var geocoder;
 var map;
 var userList;
 window.onload = function() {
@@ -12,8 +12,8 @@ window.onload = function() {
 function initMap() {
   //hardcoded seattle as a default layback
   var seattle = {
-    lat: 47.6062, 
-    lng: -122.3321
+    lat: 47.6062,
+    lng: -122.3321,
   };
   // The map, centered at seattle
   map = new google.maps.Map(
@@ -22,12 +22,12 @@ function initMap() {
 //what this function does; inits the geocoder, to be used in codeAddress in conjunction with pinform.address 
 function geocode() {
   var loc  = '';
-  geocoder = new google.maps.Geocoder()
+  geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(47.6062, -122.3321);
   var mapOptions = {
     zoom: 8,
-    center: latlng
-  }
+    center: latlng,
+  };
 }
 
 
@@ -51,11 +51,11 @@ for (i = 0; i < locations.length; i++) {
   })(marker, i)); */
 function codeAddress(user) {
   //var address = document.getElementById('address').value;
-  geocoder.geocode({ 'address': user.pinform.pinAddress}, function (results, status) {
+  geocoder.geocode({ 'address': user.pinform.pinAddress,}, function (results, status) {
     if (status === 'OK') {
       var marker = new google.maps.Marker({
         map: map,
-        position: results[0].geometry.location
+        position: results[0].geometry.location,
       });
     } else {
       alert('Geocode was not successful for the following reason: ' + status);

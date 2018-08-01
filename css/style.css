@@ -1,13 +1,18 @@
+body{
+    background-color: rgb(219, 195, 163);
+}
 
 header{
     position:relative;
+    width:100%;
 }
 
 .title{
     position:absolute;
     font-size: 100px;
-    left:30%;
-    font-family: Built Titling RG;
+    left:25%;
+    font: 'DDCHardware-Compressed.otf';
+    letter-spacing: 20px;
 }
 
 .nav-bar{
@@ -16,10 +21,12 @@ header{
     font-size: 25px;
     word-spacing: 30px;
     top: 150px;
+    left: 10%;
 }
 
 main{
     position:relative;
+    top:250px;
 }
 
 .sign{
@@ -58,17 +65,46 @@ main{
 
 .new-user-intro{
     position: absolute;
-    top:250px;
+    left: 32%;
+    text-align:center;
+    line-height: 20px;
 }
 
 .user-pin-form{
     position: absolute;
-    top:300px;
+    top:60px;
+    text-align: center;
+    left: 22%;
+    line-height: 30px;
+    font-size: 20px;
 }
 
 .about-header{
     position:absolute;
-    top: 200px;
+    top: 10px;
+    left: 10%;
+    font-size: 30px;
+    font-weight: bold;
+}
+.have-need-button{
+    position:absolute;
+    top: 10px;
+    right: 13%;
+    
+}
+#have-need{
+    font-size: 25px;
+}
+
+.team{
+    position: relative;
+    top: 400px;
+
+}
+
+.team-header{
+    position: absolute;
+    top: 100px;
 }
 
 
