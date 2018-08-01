@@ -2,7 +2,12 @@
 var geocoder;
 var map;
 var userList;
+window.onload = function() {
+  initMap();
+  geocode();
+  addPins();
 
+}
 
 function initMap() {
   //hardcoded seattle as a default layback
@@ -14,7 +19,6 @@ function initMap() {
   map = new google.maps.Map(
     document.getElementById('map'), { zoom: 7, center: seattle});
   }
-initMap();
 //what this function does; inits the geocoder, to be used in codeAddress in conjunction with pinform.address 
 function geocode() {
   var loc  = '';
@@ -25,7 +29,7 @@ function geocode() {
     center: latlng,
   };
 }
-geocode();
+
 
 
 //what this function does is takes the address given and geocodes it into latlong to be used for inside google api.
@@ -59,6 +63,11 @@ function codeAddress(user) {
   });
 }
 
+function addPins(){
+for (var idx in userList){
+  codeAddress(userList[idx])
+}
+}
 
 
 // codeAddress(jim);

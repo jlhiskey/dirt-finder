@@ -4,9 +4,8 @@ var activeUser =  [];
 var userAuth = false;
 
 // eventListener to insure user has an account
-initData();
 
-userList = JSON.parse(localStorage.getItem('users'));
+
 
 
 var signIn = document.getElementById('sign-in');
@@ -18,6 +17,7 @@ signIn.addEventListener('submit', function(event){
   console.log(useremail);
   console.log(password);
   for (var idx in userList){
+
     if( useremail === userList[idx].userEmail && password === userList[idx].userPassword){
       console.log('this happened.');
       activeUser = userList[idx];
