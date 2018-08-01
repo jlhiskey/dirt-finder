@@ -9,11 +9,15 @@ function initData(){
       new User(usedList[idx].userName, usedList[idx].userPhoneNumber, usedList[idx].pinCompanyName, usedList[idx].userEmail, usedList[idx].userPassword);
       userList[idx].pinform = usedList[idx].pinform; 
     }
+    activeUser = JSON.parse(localStorage.getItem('activeuser'));
   } else {
     userList = [];
   }
+
 }
 initData();
+
+
 
 
 function User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword) {
@@ -53,14 +57,6 @@ function makeUser(){
   //taking in information from the page, generates a User and sets it to logged in. pushes it to userList array to be stored into local storage.
 }
 
-var jim = new User('JimBob420', 'JimBob420@gmail.com', 'JimmyEatWorld', 'Boeing', '420-420-6969');
-
-jim.pinform.pinName = jim.userName;
-jim.pinform.pinEmail = jim.userEmail;
-jim.pinform.pinAddress = 'Placeholder Address';
-jim.pinform.pinHaveNeed = 'Need';
-jim.pinform.pinQuantity = '400kg';
-jim.pinform.pinDirtType = 'Topsoil';
-jim.pinform.pinDensity = 'unknown';
-jim.pinform.pinAvailability = 'now';
-
+new User('firstUser','firstNum','firstCompany','firstEmail@gmail.com','firstPass');
+new User('secondUser', 'secondNum', 'secondCompany', 'secondEmail@gmail.com', 'secondPass');
+new User('thirdUser', 'thirdNum', 'thirdCompany', 'thirdEmail@gmail.com', 'thirdpass');

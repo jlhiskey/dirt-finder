@@ -1,7 +1,8 @@
 'use strict';
 var geocoder; 
 var map;
-
+var userList;
+initData();
 
 function initMap() {
   //hardcoded seattle as a default layback
@@ -56,6 +57,10 @@ function codeAddress(user) {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
+}
+
+for (var idx in userList.length){
+  codeAddress(userList[idx]);
 }
 
 initMap();

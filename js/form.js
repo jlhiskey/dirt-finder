@@ -1,6 +1,6 @@
 'use strict';
 
-
+initData();
 
 var userFormEl = document.getElementById('new-user-form'); // looks for the html id main-form
 userFormEl.addEventListener('submit', function(event) { //when submit is clicked run event this is below
@@ -16,8 +16,9 @@ userFormEl.addEventListener('submit', function(event) { //when submit is clicked
     alert('User Name, User Email and User Password are Required Fields');
   } else {
     new User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword); //where to put the input data
+    window.location.assign('signin.html');
+
   }
-  // window.location.assign()
   console.log('user form submit button');
   localStorage.setItem('users' ,JSON.stringify(userList));
 });
@@ -40,7 +41,8 @@ pinFormEl.addEventListener('submit', function(event) { //when submit is clicked 
   if ((pinName === '') || (pinEmail === '') || (pinAddress === ''))  {
     alert('Pin Name, Pin Email and Address are Required Fields');
   } else {
-    userList[0].makePin(pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability); //where to put the input data
+    activeUser.makePin(pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability); //where to put the input data
+    window.location.assign('map.html');
   }
   
   console.log('pin form submit button');
