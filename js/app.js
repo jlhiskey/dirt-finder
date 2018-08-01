@@ -1,28 +1,37 @@
 'use strict';
 var userList = [];
 var activeUser = [];
-// var userAuth = false;
+window.onload = function(){
+  initData();
+  console.log('list of users',userList );
+}
+
 
 function initData(){
-  if (localStorage.getItem('users') && localStorage.getItem('activeuser')){
+  if (localStorage.getItem('users')){
     var usedList = JSON.parse(localStorage.getItem('users'))
     for (var idx in usedList){
       new User(usedList[idx].userName, usedList[idx].userPhoneNumber, usedList[idx].pinCompanyName, usedList[idx].userEmail, usedList[idx].userPassword);
       userList[idx].pinform = usedList[idx].pinform; 
     }
-    var activatedUser = JSON.parse(localStorage.getItem('activeuser'));
-    activeUser = new User(activatedUser.userName, activatedUser.userPhoneNumber, activatedUser.pinCompanyName, activatedUser.userEmail,activatedUser.userPassword);
-    //userList.pop();
-    
-    console.log('init data is running');
     
     
   } else {
     userList = [];
   }
+  if (localStorage.getItem('activeuser')){
+    var activatedUser = JSON.parse(localStorage.getItem('activeuser'));
+    activeUser = new User(activatedUser.userName, activatedUser.userPhoneNumber, activatedUser.userCompanyName, activatedUser.userEmail, activatedUser.userPassword);
+    userList.pop();
 
+    console.log('init data is running');
+    console.log('current active users',activeUser );
+    
+  } else {
+    activeUser= [];
+  }
 }
-initData();
+
 
 function User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword) {
   this.userName = userName;
@@ -58,6 +67,7 @@ User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinE
   //taking in information from the page, generates a pin object with necessary fields name email address avail, within the user. pushes to their pinform array. 
 };
 
+//handles user authentication for have-need button
 var userValidation = JSON.parse(localStorage.getItem('userAuth'));
 console.log(userValidation);
 var haveDirt = document.getElementById('have-need');
@@ -74,7 +84,7 @@ haveDirt.addEventListener('click', function(event){
   }
 });
 
-
+//handles logout button only on Main Page, might fix later.
 var logout = document.getElementById('logout');
 logout.addEventListener('click', function(event){
   event.preventDefault();
@@ -86,3 +96,13 @@ logout.addEventListener('click', function(event){
 
 
 
+/* activeUser.makePin('thisisatest','4204206969','bigdickincorporated','diego@diego.com','Have','11122 Meridian Ave S','420','Topsoil','69','now')
+for (var idx in userList) {
+  if (userList[idx].userName === activeUser.userName) {
+    console.log('yes')
+    userList[idx].pinform = activeUser.pinform;
+  }
+}
+console.log(userList[0].pinform)
+localStorage.setItem('users', JSON.stringify(userList));
+localStorage.setItem('activeuser', JSON.stringify(activeUser)); */

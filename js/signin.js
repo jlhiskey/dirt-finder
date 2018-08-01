@@ -4,10 +4,6 @@ var activeUser =  [];
 var userAuth = false;
 
 // eventListener to insure user has an account
-initData();
-
-userList = JSON.parse(localStorage.getItem('users'));
-
 
 var signIn = document.getElementById('sign-in');
 signIn.addEventListener('submit', function(event){
@@ -21,11 +17,11 @@ signIn.addEventListener('submit', function(event){
     if( useremail === userList[idx].userEmail && password === userList[idx].userPassword){
       console.log('this happened.');
       activeUser = userList[idx];
-      localStorage.setItem('activeuser', JSON.stringify(userList));
-      console.log(userList);
+      localStorage.setItem('activeuser', JSON.stringify(activeUser));
       userAuth = true;
       localStorage.setItem('userAuth', JSON.stringify(userAuth));
       window.location.assign('index.html');
+
     }
   }
   if (!userAuth) alert('Incorrect Username or Password');
