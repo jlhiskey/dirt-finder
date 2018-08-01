@@ -19,25 +19,45 @@
           <a href='about.html'>About Developers</a> 
           <a href='signin.html'>Sign In</a>
           <a href='userform.html'>Sign Up</a>
+          <a href='contact.html'>Contact Us</a>
   </header>
   <main>
     <iframe class="google-map-home"></iframe>
     <div class="about-header">
-        <h2>Overview </h2>
-        <p></p>   
-    </div>
+      <h2>Welcome to Dirt-Finder</h2>
+      <p>Dirt-Finder is a site completely dedicated to streamlining the import and export of soil from jobsites. Simply create and account, click on the Have Dirt/Need Dirt Tab and enter the jobsite info. This will post a pin to the map that will show others where your jobsite is and will allow them to click on your tab and find your contact information.</p>   
+  </div>
+
     <div class='sign'>
         <a href="userform.html">Sign Up</a>
         <a href="signin.html">Sign In</a>
     </div>
-    <div>
-      <form class="have-need">
+    <h1>Have Dirt/Need Dirt Locations</h1>
+  <div class='maplegendsides'>
+  <div id="map">
+
+  </div>
+  <div class='legend'>
+    <p>LEGEND</p>
+    <ul>
+      <li>RED = Have Dirt</li>
+      <li>GREEN = Need Dirt</li>
+    </ul>
+  </div>
+</div>
+  <div class='buttons'>
+    <form>
+      <fieldset>
         <button type="button" name="have">Have Dirt/Need Dirt</button>
-      </form>
+      </fieldset>
+    </form>
     </div>
   </main>
   <footer>
-      <script src="js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1lqNI3XYdF9yzdm3HCww8MX3IKElBNN4">
+    </script>
+    <script src='js/app.js'></script> 
+   <script src='js/map.js'></script>
   </footer>
 </body>
 </html>
