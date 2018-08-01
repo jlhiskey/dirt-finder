@@ -22,4 +22,4 @@ userFormEl.addEventListener('submit', function(event) { //when submit is clicked
   console.log('user form submit button');
   localStorage.setItem('users' ,JSON.stringify(userList));
   window.location.assign('signin.html');
-}); 
+});
