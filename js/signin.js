@@ -1,42 +1,47 @@
 'use strict';
 var userList = [];
+var activeUser =  [];
+
 // eventListener to insure user has an account
+initData();
+
+userList = JSON.parse(localStorage.getItem('users'));
+
+
 var signIn = document.getElementById('sign-in');
 signIn.addEventListener('submit', function(event){
   event.preventDefault();
 
   var useremail = event.target.UserEmail.value;
   var password = event.target.UserPassword.value;
-
   console.log(useremail);
   console.log(password);
-
-  if(useremail === jim.userEmail && password === jim.userPassword){
-    //login();
-    window.location.assign('index.html');
-    var authentication = true;
+  for (var idx in userList){
+   if( useremail === userList[idx].userEmail && password === userList[idx].userPassword){
+     console.log('this happened.');
+     
+     activeUser = userList[idx]
+     localStorage.setItem('activeuser', JSON.stringify(userList));
+   }
   }
-  else return alert('Incorrect Username or Password');
+  console.log(userList);
+  
+  window.location.assign('index.html');
+
 });
 
-function User(user,email,pass,company,phone){
-  this.userName = user;
-  this.userEmail = email;
-  this.userPassword = pass;
-  this.userCompany= company;
-  this.userPhoneNumber= phone;
-  this.pinform = {
-    pinName:'',
-    pinEmail: '',
-    pinAddress: '',
-    pinHaveNeed: '',
-    pinQuantity: '',
-    pinDirtType: '',
-    pinDensity: '',
-    pinAvailability: '',
-  };
-  userList.push(this);
-}
+  /* console.log(passwordCredentials[0]);
+  for(var i = 0; i < passwordCredentials[0].length; i++){
+    console.log(passwordCredentials[0][i]);
+    console.log('here');
+    if(useremail === passwordCredentials[0][i].userEmail && password === passwordCredentials[0][i].userPassword){
+      console.log('here');
+      //login();
+      /* activeUser = userList[i]
+      localStorage.setItem('activeuser', JSON.stringify(activeUser)); */
+      
+   /*  } 
+  }
 
-
-var jim = new User('JimBob420', 'JimBob420@gmail.com', 'JimmyEatWorld', 'Boeing', '420-420-6969');
+  if (!userAuth) alert('Incorrect Username or Password');
+});*/

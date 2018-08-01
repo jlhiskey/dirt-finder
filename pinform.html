@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>DirtFinder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' type='text/css' href='css/reset.css'>
-  <link rel='stylesheet' type='text/css' href='css/style.css'>
-
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dirt-Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='css/reset.css'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    
+  </head>
 
 
 <body>
 
   <header>
-  <nav class='nav-bar'>
-    <a href='index.html'>Home</a>
-    <a href='pinform.html'>Have/Want</a>
-    <a href='map.html'>Map</a>
-    <a href='about.html'>About</a>
-    <a href='userform.html'>Placeholder</a>
-  </nav>
+    <h1 class='title'>Dirt-Finder</h1>
+      <nav class='nav-bar'>
+          <a href="index.html">Home</a>
+          <a href='pinform.html'>Have Dirt/Need Dirt</a>
+          <a href='map.html'>Map</a>
+          <a href='about.html'>About Developers</a> 
+          <a href='signin.html'>Sign In</a>
+          <a href='userform.html'>Sign Up</a>
   </header>
 
   <main class="container">
     <div class="new-user-intro">  
         <h2>Create New Account</h2>
-        <p>Welcome to DirtFinder. Please create a new user account below.</p>
+        <p>Welcome USERNAME. Please create a import/export location below.</p>
     </div>
       <div class="user-pin-form">        
         
-        <form id="new-pin-form">
+        <form id="new-pin-form" action='map.html'>
     
-          What is Your Name?:<input name="userName" type="text" placeholder="User Name"> <br>
-          What is your Phone Number?:<input name="userPhoneNumber" type="tel" placeholder="Phone Number"><br>
-          What's Your Company's Name?:<input name="userCompanyName" type="text" placeholder="Company Name"><br>
-          What's Your Email?:<input name="userEmail" type="email" placeholder="Email Address"><br>
+          What is Your Name?:<input name="userName" type="text" placeholder="Site Superintendent Name"> <br>
+          What is your Phone Number?:<input name="userPhoneNumber" type="tel" placeholder="Site Superintendent Phone Number"><br>
+          What's Your Company's Name?:<input name="userCompanyName" type="text" placeholder="Site Superintendent Company Name"><br>
+          What's Your Email?:<input name="userEmail" type="email" placeholder="Site Superintendent Email Address"><br>
           Have/Need Dirt:<input type="radio" name="pinHaveNeed" value="have" checked> Have Dirt
           <input type="radio" name="pinHaveNeed" value="want"> Need Dirt
           Where is the Site Located?:<input name="pinAddress" type="text" placeholder="Site Address">  <br>       
