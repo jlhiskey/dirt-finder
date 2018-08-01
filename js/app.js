@@ -106,3 +106,16 @@ for (var idx in userList) {
 console.log(userList[0].pinform)
 localStorage.setItem('users', JSON.stringify(userList));
 localStorage.setItem('activeuser', JSON.stringify(activeUser)); */
+
+var haveNeedNav = document.getElementById('have-need-b');
+haveNeedNav.addEventListener('click', function(event){
+  event.preventDefault();
+ 
+  if (userValidation === true){
+    window.location.assign('pinform.html');
+  }
+  else {
+    alert('Usermust Signin');
+    window.location.assign('signin.html');
+  } 
+});
