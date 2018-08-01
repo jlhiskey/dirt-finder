@@ -2,12 +2,6 @@
 var geocoder; 
 var map;
 var userList;
-window.onload = function() {
-  initMap();
-  geocode();
-  addPins();
-
-}
 
 function initMap() {
   //hardcoded seattle as a default layback
@@ -69,5 +63,8 @@ for (var idx in userList){
 }
 }
 
+initMap();
+geocode();
+addPins();
 
 // codeAddress(jim);

@@ -15,7 +15,7 @@ function initData(){
       userList[idx].pinform = usedList[idx].pinform; 
     }
     
-    
+    //SOMETHING ABOUT THIS IS FUCKY 
   } else {
     userList = [];
   }
@@ -53,17 +53,18 @@ function userAuthen(){
 }
 
 User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability) {
-  
-  this.pinform.pinName = pinName;
-  this.pinform.pinPhoneNumber = pinPhoneNumber;
-  this.pinform.pinCompanyName = pinCompanyName;
-  this.pinform.pinEmail = pinEmail;
-  this.pinform.pinHaveNeed = pinHaveNeed;
-  this.pinform.pinAddress = pinAddress;
-  this.pinform.pinQuantity = pinQuantity;
-  this.pinform.pinDirtType = pinDirtType;
-  this.pinform.pinDensity = pinDensity;
-  this.pinform.pinAvaliability = pinAvaliability;
+  var pinform = [];
+  pinform.pinName = pinName;
+  pinform.pinPhoneNumber = pinPhoneNumber;
+  pinform.pinCompanyName = pinCompanyName;
+  pinform.pinEmail = pinEmail;
+  pinform.pinHaveNeed = pinHaveNeed;
+  pinform.pinAddress = pinAddress;
+  pinform.pinQuantity = pinQuantity;
+  pinform.pinDirtType = pinDirtType;
+  pinform.pinDensity = pinDensity;
+  pinform.pinAvaliability = pinAvaliability;
+  this.pinform.push(pinform);
   
 
   //taking in information from the page, generates a pin object with necessary fields name email address avail, within the user. pushes to their pinform array. 
