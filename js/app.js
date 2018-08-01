@@ -17,9 +17,6 @@ function initData(){
 }
 initData();
 
-
-
-
 function User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword) {
   this.userName = userName;
   this.userPhoneNumber = userPhoneNumber;
