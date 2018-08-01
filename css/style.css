@@ -1,30 +1,45 @@
+body{
+    background-color: white;
+}
 
 header{
     position:relative;
+    width:100%;
 }
 
 .title{
     position:absolute;
-    font-size: 100px;
-    left:30%;
-    font-family: Built Titling RG;
+    font-size: 7.1em;
+    left:10%;
+    top: 1.2em;
+    font: 'DDCHardware-Compressed.otf';
+    letter-spacing: .2em;
+
+}
+
+.line{
+    border-bottom: 3px solid black;
+    top: 10em;
 }
 
 .nav-bar{
     position: absolute;
-    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif Titling RG;;
-    font-size: 25px;
+    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif Titling RG;
     word-spacing: 30px;
-    top: 150px;
+    top: 2em;
+    font-size: 1.07em;
+    line-height: 2.3em;
+    right: 13%;
 }
 
 main{
     position:relative;
+    top:22em;
 }
 
 .sign{
     position: absolute;
-    top : 250px;
+    top : 15.625em;
 }
 
 .have-need{
@@ -34,7 +49,7 @@ main{
 
 .about-header{
     position: absolute;
-    top : 200px;
+    top : 18.75em;
 }
 
 .maplegendsides{
@@ -42,14 +57,23 @@ main{
 }
 
 #map {
+  position: absolute;
+  left: 120%;
   flex: 60%;
-  height: 400px;
+  height: 10em;
+  width: 15em;
+  top:3em;
 }
 
 .legend{
+  position: absolute;
+  text-align: center;
+  left: 60%;
+  top: 6em;
   flex: 30%;
-  height: 200px;
-  border: 2px solid blue;
+  height: 4em;
+  width: 15em;
+  border: 2px solid black;
 }
 
 .container{
@@ -58,18 +82,192 @@ main{
 
 .new-user-intro{
     position: absolute;
-    top:250px;
+    left: 32%;
+    text-align:center;
+    line-height: 1.5em;
 }
 
 .user-pin-form{
     position: absolute;
-    top:300px;
+    top:3.75em;
+    text-align: center;
+    left: 17%;
+    line-height: 1.9em;
+    font-size: 1.5em;
 }
 
 .about-header{
     position:absolute;
-    top: 200px;
+    top: 3em;
+    left: 10%;
+    font-size: 1.87em;
+    font-weight: bold;
+    width: 15em;
+}
+.buttons{
+    position:absolute;
+    top: 30em;
+    left: 15%;
+    
+}
+#have-need{
+    font-size: 1.56em;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: black;
+    text-align: center;
+    padding: .2em;
+}
+#have-need:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none;
 }
 
+.team{
+    position: relative;
+    top: 16em;
 
+}
 
+.team-header{
+    position: absolute;
+    top: 6.25em;
+}
+
+footer{
+    top: 50em;
+    position:relative;
+}
+
+.copyright{
+    position: absolute;
+    left:40%;
+}
+/* start buttons */
+#home-html{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: black;
+    text-align: center;
+    padding: .2em;
+}
+ 
+#home-html:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none;
+}
+
+#have-need-b{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: black;
+    padding: .2em;
+
+}
+
+#have-need-b:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none;
+}
+
+#map-html{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: black;
+    padding: .2em;
+
+}
+
+#map-html:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none;
+}
+
+#about-html{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: black;
+    padding: .2em;
+}
+
+#about-html:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none;
+}
+
+#signin-html{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: black;
+    padding: .2em;
+}
+
+#signin-html:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none;
+}
+
+#userform-html{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: black;
+    padding: .2em;
+}
+
+#userform-html:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none;
+}
+
+#contact-html{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: black;
+    padding: .2em;
+}
+
+#contact-html:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none;
+}
+
+#logout{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: black;
+    padding: .2em;
+}
+
+#logout:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none;
+}
+
+/* end buttons */
