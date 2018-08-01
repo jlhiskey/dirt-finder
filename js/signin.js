@@ -14,15 +14,20 @@ signIn.addEventListener('submit', function(event){
 
   var useremail = event.target.UserEmail.value;
   var password = event.target.UserPassword.value;
-  window.location.assign('index.html');
   console.log(useremail);
   console.log(password);
   for (var idx in userList){
    if( useremail === userList[idx].userEmail && password === userList[idx].userPassword){
+     console.log('this happened.');
+     
      activeUser = userList[idx]
+     localStorage.setItem('activeuser', JSON.stringify(userList));
    }
   }
-  console.log(activeUser);
+  console.log(userList);
+  
+  window.location.assign('index.html');
+
 });
 
   /* console.log(passwordCredentials[0]);
