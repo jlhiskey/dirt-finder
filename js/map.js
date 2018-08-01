@@ -19,7 +19,7 @@ function geocode() {
   var latlng = new google.maps.LatLng(47.6062, -122.3321);
   var mapOptions = {
     zoom: 8,
-    center: latlng
+    center: latlng,
   };
 }
 
@@ -42,6 +42,7 @@ for (i = 0; i < locations.length; i++) {
       infowindow.open(map, marker);
     }
   })(marker, i)); */
+
 function codeAddress(allpins) {
   for (var i = 0; i < allpins.length; i++){
     geocoder.geocode({ 'address': allpins[i].pinAddress}, function (results, status) {
@@ -58,6 +59,7 @@ function codeAddress(allpins) {
       }
     });
   }
+
 }
 
 
