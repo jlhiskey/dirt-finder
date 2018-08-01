@@ -3,9 +3,8 @@ var userList = [];
 var activeUser =  [];
 
 // eventListener to insure user has an account
-initData();
 
-userList = JSON.parse(localStorage.getItem('users'));
+
 
 
 var signIn = document.getElementById('sign-in');
@@ -19,9 +18,9 @@ signIn.addEventListener('submit', function(event){
   for (var idx in userList){
    if( useremail === userList[idx].userEmail && password === userList[idx].userPassword){
      console.log('this happened.');
-     
      activeUser = userList[idx]
-     localStorage.setItem('activeuser', JSON.stringify(userList));
+     localStorage.setItem('activeuser', JSON.stringify(activeUser));
+     localStorage.setItem('users',JSON.stringify(userList));
    }
   }
   console.log(userList);
