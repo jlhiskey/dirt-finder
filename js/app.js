@@ -3,13 +3,19 @@ var userList = [];
 var activeUser = [];
 
 function initData(){
-  if (localStorage.getItem('users')){
+  if (localStorage.getItem('users') && localStorage.getItem('activeuser')){
     var usedList = JSON.parse(localStorage.getItem('users'))
     for (var idx in usedList){
       new User(usedList[idx].userName, usedList[idx].userPhoneNumber, usedList[idx].pinCompanyName, usedList[idx].userEmail, usedList[idx].userPassword);
       userList[idx].pinform = usedList[idx].pinform; 
     }
-    activeUser = JSON.parse(localStorage.getItem('activeuser'));
+    var activatedUser = JSON.parse(localStorage.getItem('activeuser'));
+    activeUser = new User(activatedUser.userName, activatedUser.userPhoneNumber, activatedUser.pinCompanyName, activatedUser.userEmail,activatedUser.userPassword);
+    //userList.pop();
+    
+    console.log('init data is running');
+    
+    
   } else {
     userList = [];
   }
@@ -34,26 +40,20 @@ function userAuthen(){
 }
 
 User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability) {
-  var i = userList.length;
-  this.pinform[i].pinName = pinName;
-  this.pinform[i].pinPhoneNumber = pinPhoneNumber;
-  this.pinform[i].pinCompanyName = pinCompanyName;
-  this.pinform[i].pinEmail = pinEmail;
-  this.pinform[i].pinHaveNeed = pinHaveNeed;
-  this.pinform[i].pinAddress = pinAddress;
-  this.pinform[i].pinQuantity = pinQuantity;
-  this.pinform[i].pinDirtType = pinDirtType;
-  this.pinform[i].pinDensity = pinDensity;
-  this.pinform[i].pinAvaliability = pinAvaliability;
+  
+  this.pinform.pinName = pinName;
+  this.pinform.pinPhoneNumber = pinPhoneNumber;
+  this.pinform.pinCompanyName = pinCompanyName;
+  this.pinform.pinEmail = pinEmail;
+  this.pinform.pinHaveNeed = pinHaveNeed;
+  this.pinform.pinAddress = pinAddress;
+  this.pinform.pinQuantity = pinQuantity;
+  this.pinform.pinDirtType = pinDirtType;
+  this.pinform.pinDensity = pinDensity;
+  this.pinform.pinAvaliability = pinAvaliability;
   
 
   //taking in information from the page, generates a pin object with necessary fields name email address avail, within the user. pushes to their pinform array. 
 };
 
-function makeUser(){
-  //taking in information from the page, generates a User and sets it to logged in. pushes it to userList array to be stored into local storage.
-}
 
-new User('firstUser','firstNum','firstCompany','firstEmail@gmail.com','firstPass');
-new User('secondUser', 'secondNum', 'secondCompany', 'secondEmail@gmail.com', 'secondPass');
-new User('thirdUser', 'thirdNum', 'thirdCompany', 'thirdEmail@gmail.com', 'thirdpass');

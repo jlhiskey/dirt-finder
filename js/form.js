@@ -1,6 +1,6 @@
 'use strict';
 
-initData();
+
 
 var userFormEl = document.getElementById('new-user-form'); // looks for the html id main-form
 userFormEl.addEventListener('submit', function(event) { //when submit is clicked run event this is below
@@ -41,12 +41,20 @@ pinFormEl.addEventListener('submit', function(event) { //when submit is clicked 
   if ((pinName === '') || (pinEmail === '') || (pinAddress === ''))  {
     alert('Pin Name, Pin Email and Address are Required Fields');
   } else {
-    activeUser.makePin(pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability); //where to put the input data
-    window.location.assign('map.html');
+    activeUser.makePin(pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability);
+     //where to put the input data
+     for (var idx in userList){
+       if (userList[idx].userName === activeUser.userName){
+         console.log('yes')
+         userList[idx].pinform = activeUser.pinform;
+       }
+     }
+    
   }
   
   console.log('pin form submit button');
-  localStorage.setItem(JSON.stringify(userList));
-
+  localStorage.setItem('users',JSON.stringify(userList));
+  localStorage.setItem('activeuser',JSON.stringify(activeUser));
+  window.location.assign('map.html');
 
 });
