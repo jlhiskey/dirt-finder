@@ -6,6 +6,7 @@ window.onload = function(){
   initData();
   console.log('list of users',userList );
   console.log('active users pin',activeUser.pinform);
+  codeAddress(allPins);
 };
 
 
@@ -34,7 +35,6 @@ function initData(){
   }
   if (localStorage.getItem('allpins')){
     allPins = JSON.parse(localStorage.getItem('allpins'));
-    checkvar = allPins;
   }
 }
 

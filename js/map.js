@@ -1,7 +1,7 @@
 'use strict';
 var geocoder;
 var map;
-var checkvar;
+
 
 function initMap() {
   //hardcoded seattle as a default layback
@@ -42,11 +42,19 @@ for (i = 0; i < locations.length; i++) {
       infowindow.open(map, marker);
     }
   })(marker, i)); */
+function interactMarker(marker, arrayofpins, index){
+  var infowindow = new google.maps.InfoWindow({
+    content: arrayofpins[index].pinAddress + '<br>' + arrayofpins[index].pinEmail + '<br>' + arrayofpins[index].pinPhoneNumber
+  });
+  marker.addListener('click', function () {
+    infowindow.open(map, marker);
+  });
+}
 
 function codeAddress(arrayofpins) {
-  console.log('address of entered thing:', arrayofpins[0].pinAddress);
-
   for (var idx in arrayofpins){
+    console.log('address of entered thing:', arrayofpins[idx].pinAddress);
+
     geocoder.geocode({ 'address': arrayofpins[idx].pinAddress}, function (results, status) {
       if (status === 'OK') {
         if(arrayofpins[idx].pinHaveNeed === 'have'){
@@ -55,14 +63,20 @@ function codeAddress(arrayofpins) {
             position: results[0].geometry.location,
             icon: 'imgs/green-pin.png'
           });
-        } else {
-          var marker = new google.maps.Marker({
+          interactMarker(marker, arrayofpins, idx);
+        } else if (arrayofpins[idx].pinHaveNeed === 'need'){
+          console.log('the following console log should be need.', arrayofpins[idx].pinHaveNeed);
+          
+          var marker2 = new google.maps.Marker({
             map: map,
-            position: results[0].geometry.location
+            position: results[0].geometry.location,
+            icon: 'imgs/red-pin.png'
           });
+          interactMarker(marker2, arrayofpins, idx);
         }
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
+        console.log('did the geocoder fuck up?');
       }
     });
   }
