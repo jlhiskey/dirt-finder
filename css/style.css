@@ -1,5 +1,6 @@
 body{
-    background-color: white;
+    background-color: rgb(250, 232, 208);
+    font-family: 'Anton', sans-serif;
 }
 
 header{
@@ -12,24 +13,27 @@ header{
     font-size: 7.1em;
     left:10%;
     top: 1.2em;
-    font: 'DDCHardware-Compressed.otf';
+    font-family: 'Anton', sans-serif;
     letter-spacing: .2em;
 
 }
 
 .line{
     border-bottom: 3px solid black;
-    top: 10em;
+    width: 440px;
+    top: 8em;
+    left:10%;
+    position:relative;
 }
+
 
 .nav-bar{
     position: absolute;
-    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif Titling RG;
-    word-spacing: 30px;
     top: 2em;
     font-size: 1.07em;
     line-height: 2.3em;
-    right: 13%;
+    right:10%;
+    cursor: pointer;
 }
 
 main{
@@ -44,12 +48,22 @@ main{
 
 .have-need{
     position:absolute;
-    top: 300px;
+    top: 15em;
 }
 
 .about-header{
     position: absolute;
     top : 18.75em;
+}
+
+.welcome{
+    position: absolute;
+    top: -3em;  
+}
+
+.main-paragraph{
+    position: absolute;
+    top: -1em;
 }
 
 .maplegendsides{
@@ -62,18 +76,17 @@ main{
   flex: 60%;
   height: 10em;
   width: 15em;
-  top:3em;
+  top:-2em;
 }
 
 .legend{
   position: absolute;
   text-align: center;
   left: 60%;
-  top: 6em;
+  top: 3.5em;
   flex: 30%;
-  height: 4em;
-  width: 15em;
-  border: 2px solid black;
+  height: 2em;
+  width: 14em;
 }
 
 .container{
@@ -82,48 +95,37 @@ main{
 
 .new-user-intro{
     position: absolute;
-    left: 32%;
-    text-align:center;
+    top:2.5em;
+    left: 10%;
     line-height: 1.5em;
+    font-size:2em;
 }
 
 .user-pin-form{
     position: absolute;
-    top:3.75em;
-    text-align: center;
-    left: 17%;
-    line-height: 1.9em;
-    font-size: 1.5em;
+    top:11em;
+    left: 10%;
+    line-height: 2.2em;
+    font-size: 1em;
 }
 
-.about-header{
-    position:absolute;
-    top: 3em;
-    left: 10%;
-    font-size: 1.87em;
-    font-weight: bold;
-    width: 15em;
+.pin-button{
+    position: absolute;
+    top: 22em;
 }
-.buttons{
+
+
+.buttons #have-need{
     position:absolute;
-    top: 30em;
+    top: 14em;
+    left: 70%;
+}
+
+#have-needindex{
+    top: 45em;
     left: 15%;
-    
-}
-#have-need{
-    font-size: 1.56em;
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border: 2px solid;
-    border-color: black;
-    text-align: center;
-    padding: .2em;
-}
-#have-need:hover{
-    background-color:black;
-    color: white;
-    text-decoration: none;
+    position: absolute;
+
 }
 
 .team{
@@ -144,10 +146,24 @@ footer{
 
 .copyright{
     position: absolute;
-    left:40%;
+    left:45%;
+    top: 10em;
 }
-/* start buttons */
-#home-html{
+
+.copyright-about{
+    position: absolute;
+    left:45%;
+    top:220em;
+}
+
+#copyright-map{
+    position: absolute;
+    left:45%;
+    top: 25em;
+}
+
+/* buttons */
+.button-hover{
     background-color: white;
     color: black;
     text-decoration: none;
@@ -155,119 +171,167 @@ footer{
     border-color: black;
     text-align: center;
     padding: .2em;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
- 
-#home-html:hover{
+
+.button-hover:hover{
     background-color:black;
     color: white;
     text-decoration: none;
 }
 
-#have-need-b{
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border: 2px solid;
-    border-color: black;
-    padding: .2em;
-
+.maplegendsides #map{
+    position: absolute;
+    left: 10%;
+    width:60em;
+    height:30em;
+    top:16em;
 }
 
-#have-need-b:hover{
-    background-color:black;
-    color: white;
-    text-decoration: none;
+.maplegendsides .legend{
+    left:10%;
+    top: 8.6em;
 }
 
-#map-html{
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border: 2px solid;
-    border-color: black;
-    padding: .2em;
-
+#map-button{
+    position: absolute;
+    top: .1em;
+    left: 60%;
 }
 
-#map-html:hover{
-    background-color:black;
-    color: white;
-    text-decoration: none;
+#have-header{
+    position:absolute;
+    top:2em;
+    left: 30%;
+    font-size: 3em;
 }
 
-#about-html{
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border: 2px solid;
-    border-color: black;
-    padding: .2em;
+.team {
+    top:30em;
 }
 
-#about-html:hover{
-    background-color:black;
-    color: white;
-    text-decoration: none;
+#sign-in{
+    position: absolute;
+    left: 10%;
+    top: 2em;
+    font-size:3em;
 }
 
-#signin-html{
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border: 2px solid;
-    border-color: black;
-    padding: .2em;
+.sign-in-up{
+    position:absolute;
+    left: 10%;
+    top: 13em;
 }
 
-#signin-html:hover{
-    background-color:black;
-    color: white;
-    text-decoration: none;
+
+.contact{
+    left:10%;
+    top: 8em;
+    position:absolute;
+    line-height: 1.5em;
 }
 
-#userform-html{
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border: 2px solid;
-    border-color: black;
-    padding: .2em;
+.contact-form{
+    left:10%;
+    position:absolute;
+    top:15em;
 }
 
-#userform-html:hover{
-    background-color:black;
-    color: white;
-    text-decoration: none;
+.contact-header{
+
+    font-size:2em;
+    top:2em;
 }
 
-#contact-html{
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border: 2px solid;
-    border-color: black;
-    padding: .2em;
+.image-pin{
+    width: 10px;
+    height: 20px;
 }
 
-#contact-html:hover{
-    background-color:black;
-    color: white;
-    text-decoration: none;
+.have-need-header{
+    position:absolute;
+    left: 10%;
+    font-size: 2em;
+    top: 3em;
+    font-size:
+    2em;
 }
 
-#logout{
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border: 2px solid;
-    border-color: black;
-    padding: .2em;
+li{
+    margin-top:1em;
 }
 
-#logout:hover{
-    background-color:black;
-    color: white;
-    text-decoration: none;
+.users {
+    height: 300px;
+    width: 300px;
+    display: inline;
+    clear: both;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+   }
+
+   bio img {
+    margin-top: 10px;
+    margin-right: 40px;
+   
+  }
+
+  ul {
+    background: rgb(228, 211, 190);
+    padding: 20px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.jason1{
+    position: absolute;
+    left: 120%;
+    top:10em;
 }
 
-/* end buttons */
+.team {
+    top:30em;
+}
+
+.bio{
+  clear: both;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.team-header{
+    position: absolute;
+    top:30em;
+    font-size: 2em;
+    left: 10%;
+    margin-right:10%
+}
+
+.about-header{
+    position:relative;
+    top: 3em;
+    left: 10%;
+    line-height: 1.5em;
+    font-size: 1.87em;
+    width: 15em;
+}
+
+.racoon{
+    position: absolute;
+    right: 10%;
+    top:10em;
+}
+
+.reed1{
+    position:absolute;
+    top: 35em;
+}
+
+.diego1{
+    position:absolute;
+    top: 78em;
+    left: 120%;
+}
+
+.lists{
+    width: 420px;
+}

@@ -7,67 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' type='text/css' href='css/reset.css'>
     <link rel='stylesheet' type='text/css' href='css/style.css'>
-    
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
 <body>
   <header>
-    <h1 class='title'>Dirt-Finder</h1>  
-      <nav class='nav-bar'>
+      <div><p class ="line"></p></div>  
+    <h1 class='title'>DIRT-FINDER</h1>  
+        <nav class='nav-bar'>
             <form>
-               <a id="home-html" href="index.html">Home</a>
+               <a class="button-hover"href="index.html">Home</a>
             </form>
-              <form>
-                  <a id='have-need-b' href='pinform.html'>Have-Dirt/Need-Dirt</a>
-              </form>
-              <form>
-                  <a id='map-html' href='map.html'>Map</a>
-              </form>
-              <form>
-                  <a id='about-html' href='about.html'>About</a>
-              </form>
-              <form>
-                  <a id='signin-html' href='signin.html'>Sign-In</a>
-              </form>
-              <form>
-                  <a id='userform-html' href='userform.html'>Sign-Up</a>
-              </form>
-              <form>
-                  <a id='contact-html' href='contact.html'>Contact</a>
-              </form>
-              <form>
-                <a id="logout" name"logout">LogOut</a>
-              </form>
+
+            <form>
+                <a class="button-hover" id='have-need' href='pinform.html'>Have-Dirt/Need-Dirt</a>
+            </form>
+            <form>
+                <a class="button-hover" id='map-html' href='map.html'>Map</a>
+            </form>
+            <form>
+                <a class="button-hover"  id='about-html' href='about.html'>About</a>
+            </form>
+            <form>
+                <a class="button-hover" id='contact-html' href='contact.html'>Contact</a>
+            </form>
+            <form>
+              <a class="button-hover" id="logout" name"logout">LogOut</a>
+            </form>
+            <form>
+              <a class="button-hover"  id='signin-html' href='signin.html'>Sign-In</a>
+            </form>
+            <form>
+              <a class="button-hover" id='userform-html' href='userform.html'>Sign-Up</a>
+            </form>  
 
   </header>
   
   <main>
-      <div><p class ="line"></p></div>  
     <iframe class="google-map-home"></iframe>
     <div class="about-header">
-      <h2>Welcome to Dirt-Finder</h2>
+      <h2 class="welcome" >Welcome to Dirt-Finder</h2>
       <div id="map">
         </div>
-      <p>Dirt-Finder is a site completely dedicated to streamlining the import and export of soil from jobsites. Simply create and account, click on the Have Dirt/Need Dirt Tab and enter the jobsite info. This will post a pin to the map that will show others where your jobsite is and will allow them to click on your tab and find your contact information.</p>   
+      <p class="main-paragraph">Dirt-Finder is a site completely dedicated to streamlining the import and export of soil from jobsites. Simply create and account, click on the Have Dirt/Need Dirt Tab and enter the jobsite info. This will post a pin to the map that will show others where your jobsite is and will allow them to click on your tab and find your contact information.</p>   
   </div>
 
   <div class='legend'>
-    <p>LEGEND</p>
     <ul>
-      <li>RED = Have Dirt</li>
-      <li>GREEN = Need Dirt</li>
+        <li>Have Dirt <img class="image-pin" src= 'imgs/red-pin.png'></li>
+        <li>Need Dirt <img class="image-pin" src= 'imgs/green-pin.png'></li>
     </ul>
   </div>
 
   <div class='buttons'>
-    <form>
-      <fieldset>
-        <button id="have-need" type="button" name="have">Have Dirt/Need Dirt</button>
-      </fieldset>
-    </form>
+
+      <form>
+          <a class="button-hover" id='have-needindex'  href='pinform.html'>Have-Dirt/Need-Dirt</a>
+      </form>
+
     </div>
   </main>
   <footer>
-    <p class="copyright">Dirt-Finder all rights reserved.</p>
+    <p class="copyright">Dirt-Finder All rights reserved</p>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1lqNI3XYdF9yzdm3HCww8MX3IKElBNN4">
     </script>
     <script src='js/app.js'></script> 

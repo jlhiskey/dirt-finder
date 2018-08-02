@@ -2,11 +2,15 @@
 var userList = [];
 var activeUser = [];
 var allPins = [];
+var greenPins = [];
+var redPins = [];
 window.onload = function(){
   initData();
   console.log('list of users',userList );
   console.log('active users pin',activeUser.pinform);
-  codeAddress(allPins);
+  initMap();
+  geocode();
+  codeAddress();
 };
 
 
@@ -35,6 +39,12 @@ function initData(){
   }
   if (localStorage.getItem('allpins')){
     allPins = JSON.parse(localStorage.getItem('allpins'));
+    if (localStorage.getItem('greenpins')){
+      greenPins = JSON.parse(localStorage.getItem('greenpins'));
+    }
+    if (localStorage.getItem('redpins')){
+      redPins = JSON.parse(localStorage.getItem('redpins'));
+    }
   }
 }
 
@@ -75,7 +85,15 @@ User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinE
       localStorage.setItem('activeuser', JSON.stringify(this));
       localStorage.setItem('users', JSON.stringify(userList));
       allPins.push(pinform);
+      if (pinform.pinHaveNeed === 'have'){
+        greenPins.push(pinform);
+        localStorage.setItem('greenpins', JSON.stringify(greenPins));
+      } else {
+        redPins.push(pinform);
+        localStorage.setItem('redpins', JSON.stringify(redPins));
+      }
       localStorage.setItem('allpins', JSON.stringify(allPins));
+      
       console.log('makePin happened.');
     }
   }
@@ -84,20 +102,21 @@ User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinE
   //taking in information from the page, generates a pin object with necessary fields name email address avail, within the user. pushes to their pinform array.
 };
 
-//handles user authentication for have-need button
-var userValidation = JSON.parse(localStorage.getItem('userAuth'));
+//works but needs to be refactored if time allows
+var userValidation = JSON.parse(localStorage.getItem('activeuser'));
 console.log(userValidation);
 var haveDirt = document.getElementById('have-need');
 haveDirt.addEventListener('click', function(event){
 
   event.preventDefault();
-
-  if (userValidation === true){
-    window.location.assign('pinform.html');
-  }
-  else {
+  console.log('Have Need Clicked');
+  if (activeUser.userName === undefined){
+    console.log('User Name Undefined');
     alert('Usermust Signin');
     window.location.assign('signin.html');
+  }
+  else { 
+    window.location.assign('pinform.html');
   }
 });
 
@@ -106,33 +125,38 @@ var logout = document.getElementById('logout');
 logout.addEventListener('click', function(event){
   event.preventDefault();
 
-  userValidation = false;
+  activeUser = [];
+  localStorage.removeItem('activeuser');
   
   alert('You have been logged out');
 });
 
 
 
-/* activeUser.makePin('thisisatest','4204206969','bigdickincorporated','diego@diego.com','Have','11122 Meridian Ave S','420','Topsoil','69','now')
-for (var idx in userList) {
-  if (userList[idx].userName === activeUser.userName) {
-    console.log('yes')
-    userList[idx].pinform = activeUser.pinform;
-  }
-}
-console.log(userList[0].pinform)
-localStorage.setItem('users', JSON.stringify(userList));
-localStorage.setItem('activeuser', JSON.stringify(activeUser)); */
+var userValidation = JSON.parse(localStorage.getItem('activeuser'));
+console.log(userValidation);
+/* var haveDirt = document.getElementById('have-needindex');
+haveDirt.addEventListener('click', function(event){
 
-var haveNeedNav = document.getElementById('have-need-b');
-haveNeedNav.addEventListener('click', function(event){
   event.preventDefault();
- 
-  if (userValidation === true){
-    window.location.assign('pinform.html');
-  }
-  else {
+  console.log('Have Need Clicked');
+  if (activeUser.userName === undefined){
+    console.log('User Name Undefined');
     alert('Usermust Signin');
     window.location.assign('signin.html');
-  } 
+  }
+  else { 
+    window.location.assign('pinform.html');
+  }
+}); */
+
+//handles logout button only on Main Page, might fix later.
+var logout = document.getElementById('logout');
+logout.addEventListener('click', function(event){
+  event.preventDefault();
+
+  activeUser = [];
+  localStorage.removeItem('activeuser');
+  
+  alert('You have been logged out');
 });
