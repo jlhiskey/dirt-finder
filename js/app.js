@@ -2,11 +2,15 @@
 var userList = [];
 var activeUser = [];
 var allPins = [];
+var greenPins = [];
+var redPins = [];
 window.onload = function(){
   initData();
   console.log('list of users',userList );
   console.log('active users pin',activeUser.pinform);
-  codeAddress(allPins);
+  initMap();
+  geocode();
+  codeAddress();
 };
 
 
@@ -35,6 +39,12 @@ function initData(){
   }
   if (localStorage.getItem('allpins')){
     allPins = JSON.parse(localStorage.getItem('allpins'));
+    if (localStorage.getItem('greenpins')){
+      greenPins = JSON.parse(localStorage.getItem('greenpins'));
+    }
+    if (localStorage.getItem('redpins')){
+      redPins = JSON.parse(localStorage.getItem('redpins'));
+    }
   }
 }
 
@@ -75,7 +85,15 @@ User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinE
       localStorage.setItem('activeuser', JSON.stringify(this));
       localStorage.setItem('users', JSON.stringify(userList));
       allPins.push(pinform);
+      if (pinform.pinHaveNeed === 'have'){
+        greenPins.push(pinform);
+        localStorage.setItem('greenpins', JSON.stringify(greenPins));
+      } else {
+        redPins.push(pinform);
+        localStorage.setItem('redpins', JSON.stringify(redPins));
+      }
       localStorage.setItem('allpins', JSON.stringify(allPins));
+      
       console.log('makePin happened.');
     }
   }
@@ -117,7 +135,7 @@ logout.addEventListener('click', function(event){
 
 var userValidation = JSON.parse(localStorage.getItem('activeuser'));
 console.log(userValidation);
-var haveDirt = document.getElementById('have-needindex');
+/* var haveDirt = document.getElementById('have-needindex');
 haveDirt.addEventListener('click', function(event){
 
   event.preventDefault();
@@ -130,7 +148,7 @@ haveDirt.addEventListener('click', function(event){
   else { 
     window.location.assign('pinform.html');
   }
-});
+}); */
 
 //handles logout button only on Main Page, might fix later.
 var logout = document.getElementById('logout');
