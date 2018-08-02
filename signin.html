@@ -11,40 +11,49 @@
   </head>
 <body>
     <header>
-        <h1 class='title'>DIRT-FINDER</h1>  
+        <h1 class='title'>Dirt-Finder</h1>  
+
           <nav class='nav-bar'>
                 <form>
                    <a class="button-hover"href="index.html">Home</a>
                 </form>
-                  <form>
-                      <a class="button-hover" id="have-need-b" href='pinform.html'>Have-Dirt/Need-Dirt</a>
-                  </form>
-                  <form>
-                      <a class="button-hover" href='map.html'>Map</a>
-                  </form>
-                  <form>
-                      <a class="button-hover" href='about.html'>About</a>
-                  </form>
-                  <form>
-                      <a class="button-hover" href='signin.html'>Sign-In</a>
-                  </form>
-                  <form>
-                      <a class="button-hover" href='userform.html'>Sign-Up</a>
-                  </form>
-                  <form>
-                      <a class="button-hover" href='contact.html'>Contact</a>
-                  </form>
-                </header>
-      
-      <main>
-          <div><p class ="line"></p></div>
-    <div class="sign-in-form">
+                <form>
+                    <a id='have-need' href='pinform.html'>Have-Dirt/Need-Dirt</a>
+                </form>
+                <form>
+                    <a id='map-html' href='map.html'>Map</a>
+                </form>
+                <form>
+                    <a id='about-html' href='about.html'>About</a>
+                </form>
+                <form>
+                    <a id='contact-html' href='contact.html'>Contact</a>
+                </form>
+                <form>
+                  <a id="logout" name"logout">LogOut</a>
+                </form>
+                <form>
+                  <a id='signin-html' href='signin.html'>Sign-In</a>
+                </form>
+                <form>
+                  <a id='userform-html' href='userform.html'>Sign-Up</a>
+                </form>  
+      </header>
+  <main>
+    <div>
+
       <form id="sign-in" method="GET" action='index.html'>
         <h2>Sign In</h2>
           <input class="UserEmail" type="email" name="UserEmail" placeholder="Email Address">
           <input class="password" type="password" name="UserPassword" placeholder="Password">
           <input class="button-hover" type="submit" name="submit-pwd">
       </form>
+    </div>
+    <div>
+        <p>Don't Already Have an Account?</p>
+        <form>
+            <a id='userform-html' href='userform.html'>Sign-Up</a>
+          </form>  
     </div>
   </main>
   <footer>
