@@ -30,6 +30,7 @@ header{
     font-size: 1.07em;
     line-height: 2.3em;
     right:10%;
+    cursor: pointer;
 }
 
 main{
