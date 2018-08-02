@@ -1,7 +1,7 @@
 'use strict';
 var geocoder;
 var map;
-
+var checkvar;
 
 function initMap() {
   //hardcoded seattle as a default layback
@@ -43,29 +43,37 @@ for (i = 0; i < locations.length; i++) {
     }
   })(marker, i)); */
 
-function codeAddress(allpins) {
-  for (var i = 0; i < allpins.length; i++){
-    geocoder.geocode({ 'address': allpins[i].pinAddress}, function (results, status) {
+function codeAddress(arrayofpins) {
+  console.log('address of entered thing:', arrayofpins[0].pinAddress);
+
+  for (var idx in arrayofpins){
+    geocoder.geocode({ 'address': arrayofpins[idx].pinAddress}, function (results, status) {
       if (status === 'OK') {
-        console.log('why isn\'t this firing?', allPins);
-        var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-          
-          
-        });
+        if(arrayofpins[idx].pinHaveNeed === 'have'){
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            icon: 'imgs/green-pin.png'
+          });
+        } else {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+          });
+        }
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
   }
-
 }
-
 
 
 initMap();
 geocode();
+
+
+
 
 
 // codeAddress(jim);
