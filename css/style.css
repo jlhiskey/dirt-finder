@@ -23,6 +23,7 @@ header{
     top: 10em;
 }
 
+
 .nav-bar{
     position: absolute;
     top: 2em;
@@ -108,26 +109,17 @@ main{
     font-size: 1.87em;
     width: 15em;
 }
-.buttons{
+.buttons #have-need{
     position:absolute;
+    top: 12em;
+    left: 70%;
+}
+
+#have-needindex{
     top: 38em;
     left: 15%;
-    
-}
-#have-need{
-    font-size: 1.56em;
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border: 2px solid;
-    border-color: black;
-    text-align: center;
-    padding: .2em;
-}
-#have-need:hover{
-    background-color:black;
-    color: white;
-    text-decoration: none;
+    position: absolute;
+
 }
 
 .team{
@@ -150,6 +142,8 @@ footer{
     position: absolute;
     left:40%;
 }
+
+
 /* buttons */
 .button-hover{
     background-color: white;
@@ -159,6 +153,7 @@ footer{
     border-color: black;
     text-align: center;
     padding: .2em;
+
 }
 
 .button-hover:hover{
@@ -172,12 +167,12 @@ footer{
     left: 10%;
     width:60em;
     height:30em;
-    top:10em;
+    top:14em;
 }
 
 .maplegendsides .legend{
     left:10%;
-    top: 5.5em;
+    top: 9.5em;
 }
 
 #map-button{
@@ -212,20 +207,24 @@ footer{
     margin-right:10%
 }
 
-.about-header{
-    margin-top:10em;
-}
 
-.sign-in-form{
+#sign-in{
     position: absolute;
     left: 10%;
     top: 2em;
     font-size:3em;
 }
 
+.sign-in-up{
+    position:absolute;
+    left: 10%;
+    top: 13em;
+}
+
+
 .contact{
     left:10%;
-    top: 2.5em;
+    top: 8em;
     position:absolute;
     line-height: 1.5em;
 }
@@ -233,10 +232,25 @@ footer{
 .contact-form{
     left:10%;
     position:absolute;
-    top:9em;
+    top:15em;
 }
 
 .contact-header{
+
+    font-size:2em;
+    top:2em;
+}
+
+.image-pin{
+    width: 10px;
+    height: 20px;
+}
+
+.have-need-header{
+    position:absolute;
+    left: 10%;
+    font-size: 2em;
+    top: 3.5em;
     font-size:
     2em;
 }
