@@ -1,8 +1,7 @@
 'use strict';
 var geocoder;
 var map;
-
-
+var marker;
 function initMap() {
   //hardcoded seattle as a default layback
   var seattle = {
@@ -24,6 +23,64 @@ function geocode() {
   };
 }
 
+function codeAddress(){
+  for (var idx in greenPins){
+    geocoder.geocode({ 'address': greenPins[idx].pinAddress }, function (results, status) {
+      if (status === 'OK') {
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+          icon: 'imgs/green-pin.png'
+          
+        });
+        var infowindow = new google.maps.InfoWindow({
+          content: 'nothing'
+        });
+
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+  codeAddressRed();
+}
+function codeAddressRed(){
+  for (var idx in redPins) {
+    geocoder.geocode({ 'address': redPins[idx].pinAddress }, function (results, status) {
+      if (status === 'OK') {
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+          icon: 'imgs/red-pin.png'
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+}
+/* 
+function interactGreenMarker(marker, index) {
+  marker.info = new google.maps.InfoWindow({
+    content: greenPins[index].pinAddress + '<br>' + greenPins[index].pinEmail + '<br>' + greenPins[index].pinPhoneNumber
+  });
+  google.maps.event.addListener(marker, 'click',function() {
+    marker.info.open(map,marker);
+  });
+}
+
+function interactRedMarker(marker, index) {
+  marker.info = new google.maps.InfoWindow({
+    content: redPins[index].pinAddress + '<br>' + redPins[index].pinEmail + '<br>' + redPins[index].pinPhoneNumber
+  });
+  google.maps.event.addListener(marker, 'click', function () {
+    marker.info.open(map, marker);
+  });
+}
+
+ */
+
+
 
 
 //what this function does is takes the address given and geocodes it into latlong to be used for inside google api.
@@ -44,7 +101,7 @@ for (i = 0; i < locations.length; i++) {
     }
   })(marker, i)); */
 
-
+/* 
 function codeAddress() {
   var marker;
   for  (idx = 0; idx < allPins.length; idx++){
@@ -64,7 +121,7 @@ function codeAddress() {
       }
     });
   }
-}
+} */
 
 
 /* function newCodeAddressone(arrayofpins){
