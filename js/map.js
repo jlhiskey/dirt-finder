@@ -13,6 +13,7 @@ function initMap() {
   map = new google.maps.Map(
     document.getElementById('map'), { zoom: 7, center: seattle});
 }
+
 //what this function does; inits the geocoder, to be used in codeAddress in conjunction with pinform.address
 function geocode() {
   geocoder = new google.maps.Geocoder();
@@ -42,52 +43,88 @@ for (i = 0; i < locations.length; i++) {
       infowindow.open(map, marker);
     }
   })(marker, i)); */
-function interactMarker(marker, arrayofpins, index){
-  var infowindow = new google.maps.InfoWindow({
-    content: arrayofpins[index].pinAddress + '<br>' + arrayofpins[index].pinEmail + '<br>' + arrayofpins[index].pinPhoneNumber
-  });
-  marker.addListener('click', function () {
-    infowindow.open(map, marker);
-  });
-}
 
-function codeAddress(arrayofpins) {
-  for (var idx in arrayofpins){
-    console.log('address of entered thing:', arrayofpins[idx].pinAddress);
 
-    geocoder.geocode({ 'address': arrayofpins[idx].pinAddress}, function (results, status) {
+function codeAddress() {
+  var marker;
+  for  (idx = 0; idx < allPins.length; idx++){
+    console.log('address of entered thing:', allPins[idx].pinAddress);
+    console.log('value of entered thing:', allPins[idx].pinHaveNeed);
+
+    geocoder.geocode({ 'address': allPins[idx].pinAddress}, function (results, status) {
       if (status === 'OK') {
-        if(arrayofpins[idx].pinHaveNeed === 'have'){
-          var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location,
-            icon: 'imgs/green-pin.png'
-          });
-          interactMarker(marker, arrayofpins, idx);
-        } else if (arrayofpins[idx].pinHaveNeed === 'need'){
-          console.log('the following console log should be need.', arrayofpins[idx].pinHaveNeed);
-          
-          var marker2 = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location,
-            icon: 'imgs/red-pin.png'
-          });
-          interactMarker(marker2, arrayofpins, idx);
-        }
+        marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+          icon: 'imgs/green-pin.png'
+      
+        });
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
-        console.log('did the geocoder fuck up?');
       }
     });
   }
 }
 
 
-initMap();
-geocode();
+/* function newCodeAddressone(arrayofpins){
+  var newCodeAddress = [];
+  var newCodeAddressHN = [];
+  for (var idx in arrayofpins){
+    newCodeAddress.push(arrayofpins[idx].pinAddress);
+    newCodeAddressHN.push(arrayofpins[idx].pinHaveNeed);
+  }
+  newCodeAddresstwo(newCodeAddress, newCodeAddressHN);
+}
 
+function newCodeAddresstwo(arrayofaddresses, arrayofHN){
+  for (var idx = 0; idx < arrayofaddresses.length; idx++){
+    geocoder.geocode({'address': arrayofaddresses[idx]}, function (results, status) {
+      if (status === 'OK'){
+        console.log(arrayofaddresses);
+        checkHN( arrayofHN, results, idx);
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+}
 
+function checkHN(arrayofHN, results,idx ){
+  if (arrayofHN[idx]=== 'have'){
+    console.log('make green pin ran',idx, arrayofHN[idx]);
+    makeGreenPin(results);
+  } else {
+    console.log('make red pin ran',idx, arrayofHN[idx]);
+    makeRedPin(results);
+  }
+}
 
+function makeGreenPin(results){
 
+  var marker = new google.maps.Marker({
+    map: map,
+    position: results[0].geometry.location,
+    icon: 'imgs/green-pin.png'
+  });
+}
 
-// codeAddress(jim);
+function makeRedPin(results){
+  var marker = new google.maps.Marker({
+    map: map,
+    position: results[0].geometry.location,
+    icon: 'imgs/red-pin.png'
+  });
+}
+ */
+
+/* 
+function interactMarker(marker, index){
+  var infowindow = new google.maps.InfoWindow({
+    content: allPins[index].pinAddress + '<br>' + allPins[index].pinEmail + '<br>' + allPins[index].pinPhoneNumber
+  });
+  marker.addListener('click', function () {
+    infowindow.open(map, marker);
+  });
+} */
+// codeAddress(jim)

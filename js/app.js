@@ -6,7 +6,8 @@ window.onload = function(){
   initData();
   console.log('list of users',userList );
   console.log('active users pin',activeUser.pinform);
-  codeAddress(allPins);
+  initMap();
+  geocode();
 };
 
 
@@ -117,7 +118,7 @@ logout.addEventListener('click', function(event){
 
 var userValidation = JSON.parse(localStorage.getItem('activeuser'));
 console.log(userValidation);
-var haveDirt = document.getElementById('have-needindex');
+/* var haveDirt = document.getElementById('have-needindex');
 haveDirt.addEventListener('click', function(event){
 
   event.preventDefault();
@@ -130,7 +131,7 @@ haveDirt.addEventListener('click', function(event){
   else { 
     window.location.assign('pinform.html');
   }
-});
+}); */
 
 //handles logout button only on Main Page, might fix later.
 var logout = document.getElementById('logout');
