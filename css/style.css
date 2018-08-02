@@ -20,7 +20,10 @@ header{
 
 .line{
     border-bottom: 3px solid black;
-    top: 10em;
+    width: 440px;
+    top: 8em;
+    left:10%;
+    position:relative;
 }
 
 
@@ -52,6 +55,16 @@ main{
     top : 18.75em;
 }
 
+.welcome{
+    position: absolute;
+    top: -3em;  
+}
+
+.main-paragraph{
+    position: absolute;
+    top: -1em;
+}
+
 .maplegendsides{
   display:flex;
 }
@@ -62,18 +75,17 @@ main{
   flex: 60%;
   height: 10em;
   width: 15em;
-  top:3em;
+  top:-2em;
 }
 
 .legend{
   position: absolute;
   text-align: center;
   left: 60%;
-  top: 6em;
+  top: 3.5em;
   flex: 30%;
-  height: 4em;
-  width: 15em;
-  border: 2px solid black;
+  height: 2em;
+  width: 14em;
 }
 
 .container{
@@ -101,22 +113,15 @@ main{
     top: 22em;
 }
 
-.about-header{
-    position:absolute;
-    top: 3em;
-    left: 10%;
-    line-height: 1.5em;
-    font-size: 1.87em;
-    width: 15em;
-}
+
 .buttons #have-need{
     position:absolute;
-    top: 12em;
+    top: 14em;
     left: 70%;
 }
 
 #have-needindex{
-    top: 38em;
+    top: 45em;
     left: 15%;
     position: absolute;
 
@@ -140,9 +145,21 @@ footer{
 
 .copyright{
     position: absolute;
-    left:40%;
+    left:45%;
+    top: 10em;
 }
 
+.copyright-about{
+    position: absolute;
+    left:45%;
+    top:220em;
+}
+
+#copyright-map{
+    position: absolute;
+    left:45%;
+    top: 25em;
+}
 
 /* buttons */
 .button-hover{
@@ -153,7 +170,7 @@ footer{
     border-color: black;
     text-align: center;
     padding: .2em;
-
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .button-hover:hover{
@@ -167,12 +184,12 @@ footer{
     left: 10%;
     width:60em;
     height:30em;
-    top:14em;
+    top:16em;
 }
 
 .maplegendsides .legend{
     left:10%;
-    top: 9.5em;
+    top: 8.6em;
 }
 
 #map-button{
@@ -191,22 +208,6 @@ footer{
 .team {
     top:30em;
 }
-
-.bio{
-    float: left;
-  clear: both;
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
-
-.team-header{
-    position: absolute;
-    top:2.5em;
-    font-size: 2em;
-    left: 10%;
-    margin-right:10%
-}
-
 
 #sign-in{
     position: absolute;
@@ -250,7 +251,7 @@ footer{
     position:absolute;
     left: 10%;
     font-size: 2em;
-    top: 3.5em;
+    top: 3em;
     font-size:
     2em;
 }
@@ -279,4 +280,57 @@ li{
     background: rgb(228, 211, 190);
     padding: 20px;
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.jason1{
+    position: absolute;
+    left: 120%;
+    top:10em;
+}
+
+.team {
+    top:30em;
+}
+
+.bio{
+  clear: both;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.team-header{
+    position: absolute;
+    top:30em;
+    font-size: 2em;
+    left: 10%;
+    margin-right:10%
+}
+
+.about-header{
+    position:relative;
+    top: 3em;
+    left: 10%;
+    line-height: 1.5em;
+    font-size: 1.87em;
+    width: 15em;
+}
+
+.racoon{
+    position: absolute;
+    right: 10%;
+    top:10em;
+}
+
+.reed1{
+    position:absolute;
+    top: 35em;
+}
+
+.diego1{
+    position:absolute;
+    top: 78em;
+    left: 120%;
+}
+
+.lists{
+    width: 420px;
 }
