@@ -16,10 +16,8 @@ userFormEl.addEventListener('submit', function(event) { //when submit is clicked
     alert('User Name, User Email and User Password are Required Fields');
   } else {
     new User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword); //where to put the input data
-    
-
-  }
-  console.log('user form submit button');
-  localStorage.setItem('users' ,JSON.stringify(userList));
-  window.location.assign('signin.html');
+    console.log('user form submit button');
+    localStorage.setItem('users' ,JSON.stringify(userList));
+    window.location.assign('signin.html');
+  } 
 });
