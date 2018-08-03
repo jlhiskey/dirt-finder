@@ -19,7 +19,7 @@ header{
     letter-spacing: .2vw;
     width: 100%;
     height: 100%;
-
+    text-shadow: 0 0 3px #FF0000;
 }
 
 .line{
@@ -28,6 +28,7 @@ header{
     top: 10vw;
     left:10%;
     position:relative;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -97,9 +98,9 @@ main{
   text-align: center;
   left: 39vw;
   top: 12.3vw;
-  flex: 10vw;
-  height: 1vw;
-  width: 7vw;
+  flex: 2vw;
+  /* height: 3vw;
+  width: 5vw; */
   font-size: 1vw;
 }
 
