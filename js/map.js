@@ -1,7 +1,9 @@
 'use strict';
 var geocoder;
 var map;
-var marker;
+var testInfo;
+var markers = [];
+
 function initMap() {
   //hardcoded seattle as a default layback
   var seattle = {
@@ -11,6 +13,7 @@ function initMap() {
   // The map, centered at seattle
   map = new google.maps.Map(
     document.getElementById('map'), { zoom: 7, center: seattle});
+
 }
 
 //what this function does; inits the geocoder, to be used in codeAddress in conjunction with pinform.address
@@ -25,26 +28,30 @@ function geocode() {
 
 function codeAddress(){
   for (var idx in greenPins){
-    geocoder.geocode({ 'address': greenPins[idx].pinAddress }, function (results, status) {
-      if (status === 'OK') {
-        var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location,
-          icon: 'imgs/green-pin.png'
-          
-        });
-        var infowindow = new google.maps.InfoWindow({
-          content: 'nothing'
-        });
-
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
+    (function() {
+      geocoder.geocode({ 'address': greenPins[idx].pinAddress }, function (results, status) {
+        if (status === 'OK') {
+          let marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            icon: 'imgs/green-pin.png'
+          });
+          markers.push(marker);
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    })();
   }
-  codeAddressRed();
 }
-function codeAddressRed(){
+
+// ok so idk what's fucky here but it is a Closure Issue.
+
+
+
+
+
+/* unction codeAddressRed(){
   for (var idx in redPins) {
     geocoder.geocode({ 'address': redPins[idx].pinAddress }, function (results, status) {
       if (status === 'OK') {
@@ -59,7 +66,9 @@ function codeAddressRed(){
     });
   }
 }
-/* 
+ */
+
+/*
 function interactGreenMarker(marker, index) {
   marker.info = new google.maps.InfoWindow({
     content: greenPins[index].pinAddress + '<br>' + greenPins[index].pinEmail + '<br>' + greenPins[index].pinPhoneNumber
