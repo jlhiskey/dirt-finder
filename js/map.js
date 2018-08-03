@@ -36,13 +36,14 @@ function codeAddress(){
             position: results[0].geometry.location,
             icon: 'imgs/green-pin.png'
           });
-          markers.push(marker);
+          interactGreenMarker(marker, idx);
         } else {
           alert('Geocode was not successful for the following reason: ' + status);
         }
       });
     })();
   }
+  codeAddressRed();
 }
 
 // ok so idk what's fucky here but it is a Closure Issue.
@@ -51,7 +52,7 @@ function codeAddress(){
 
 
 
-/* unction codeAddressRed(){
+function codeAddressRed(){
   for (var idx in redPins) {
     geocoder.geocode({ 'address': redPins[idx].pinAddress }, function (results, status) {
       if (status === 'OK') {
@@ -60,15 +61,15 @@ function codeAddress(){
           position: results[0].geometry.location,
           icon: 'imgs/red-pin.png'
         });
+        interactRedMarker(marker,idx);
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
   }
 }
- */
 
-/*
+
 function interactGreenMarker(marker, index) {
   marker.info = new google.maps.InfoWindow({
     content: greenPins[index].pinAddress + '<br>' + greenPins[index].pinEmail + '<br>' + greenPins[index].pinPhoneNumber
@@ -87,7 +88,7 @@ function interactRedMarker(marker, index) {
   });
 }
 
- */
+
 
 
 
