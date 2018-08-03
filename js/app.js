@@ -112,7 +112,7 @@ haveDirt.addEventListener('click', function(event){
   console.log('Have Need Clicked');
   if (activeUser.userName === undefined){
     console.log('User Name Undefined');
-    alert('Usermust Signin');
+    alert('User must sign in or create a new account.');
     window.location.assign('signin.html');
   }
   else { 

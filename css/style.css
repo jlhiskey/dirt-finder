@@ -1,6 +1,8 @@
 body{
     background-color: rgb(250, 232, 208);
     font-family: 'Anton', sans-serif;
+    width: 90%;
+    height: 100%;
 }
 
 header{
@@ -10,18 +12,20 @@ header{
 
 .title{
     position:absolute;
-    font-size: 7.1em;
+    font-size: 8vw;
     left:10%;
-    top: 1.2em;
+    top: 1.2vw;
     font-family: 'Anton', sans-serif;
-    letter-spacing: .2em;
+    letter-spacing: .2vw;
+    width: 100%;
+    height: 100%;
 
 }
 
 .line{
-    border-bottom: 3px solid black;
-    width: 440px;
-    top: 8em;
+    border-bottom: .5vw solid black;
+    width: 50vw;
+    top: 10vw;
     left:10%;
     position:relative;
 }
@@ -29,41 +33,49 @@ header{
 
 .nav-bar{
     position: absolute;
-    top: 2em;
-    font-size: 1.07em;
-    line-height: 2.3em;
-    right:10%;
+    top: 1.0vw;
+    font-size: 1.2vw;
+    line-height: 2.7vw;
+    right:10vw;
     cursor: pointer;
+    
 }
 
 main{
     position:relative;
-    top:22em;
+    top:10vw;
 }
 
 .sign{
     position: absolute;
-    top : 15.625em;
+    top : 15.625vw;
 }
 
 .have-need{
     position:absolute;
-    top: 15em;
+    top: 15vw;
 }
 
 .about-header{
     position: absolute;
-    top : 18.75em;
+    top : 22.75vm;
+    
 }
 
 .welcome{
     position: absolute;
-    top: -3em;  
+    top: -1vw;  
+    line-height: 5vw;
+    width: 30vw;
+    font-size: 2vw;
 }
 
 .main-paragraph{
     position: absolute;
-    top: -1em;
+    top: 4vw;
+    font-size: 1.7vw;
+    line-height: 2vw;
+    width: 30vw;
 }
 
 .maplegendsides{
@@ -72,21 +84,23 @@ main{
 
 #map {
   position: absolute;
-  left: 120%;
+  left:30vw;
   flex: 60%;
-  height: 10em;
-  width: 15em;
-  top:-2em;
+  height: 30vw;
+  width: 40vw;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 9.38vw;
 }
 
 .legend{
   position: absolute;
   text-align: center;
-  left: 60%;
-  top: 3.5em;
-  flex: 30%;
-  height: 2em;
-  width: 14em;
+  left: 39vw;
+  top: 12.3vw;
+  flex: 10vw;
+  height: 1vw;
+  width: 7vw;
+  font-size: 1vw;
 }
 
 .container{
@@ -95,71 +109,75 @@ main{
 
 .new-user-intro{
     position: absolute;
-    top:2.5em;
+    top:2.5vw;
     left: 10%;
-    line-height: 1.5em;
-    font-size:2em;
+    line-height: 2vw;
+    font-size:2vw;
 }
 
 .user-pin-form{
     position: absolute;
-    top:11em;
+    top:11vw;
     left: 10%;
-    line-height: 2.2em;
-    font-size: 1em;
+    line-height: 2.2vw;
+    font-size: 1vw;
 }
 
 .pin-button{
     position: absolute;
-    top: 22em;
-}
-
-
-.buttons #have-need{
-    position:absolute;
-    top: 14em;
-    left: 70%;
+    top: 22vw;
 }
 
 #have-needindex{
-    top: 45em;
-    left: 15%;
+    top: 34vw;
+    left: 20vw;
     position: absolute;
+    width: 10vw;
+    height: 2vw;
+    font-size: 1.2vw;
+    line-height: 2vw;
+}
 
+#have-needmap{
+    position:absolute;
+    top: 38vw;
+    left:40vw;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .team{
     position: relative;
-    top: 16em;
+    top: 16vw;
 
 }
 
 .team-header{
     position: absolute;
-    top: 6.25em;
+    top: 6.25vw;
 }
 
 footer{
-    top: 50em;
+    top: 43vw;
     position:relative;
+    font-size: 0.7vw;
 }
 
 .copyright{
     position: absolute;
     left:45%;
-    top: 10em;
+    top: 9.8vw;
 }
 
 .copyright-about{
     position: absolute;
     left:45%;
-    top:220em;
+    top:220vw;
 }
 
 #copyright-map{
     position: absolute;
     left:45%;
-    top: 25em;
+    top: 10vw;
 }
 
 /* buttons */
@@ -167,10 +185,10 @@ footer{
     background-color: white;
     color: black;
     text-decoration: none;
-    border: 2px solid;
+    border: .1vw solid;
     border-color: black;
     text-align: center;
-    padding: .2em;
+    padding: .2vw;
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -183,88 +201,93 @@ footer{
 .maplegendsides #map{
     position: absolute;
     left: 10%;
-    width:60em;
-    height:30em;
-    top:16em;
+    width:60vw;
+    height:30vw;
+    top:7vw;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .maplegendsides .legend{
     left:10%;
-    top: 8.6em;
+    top: 7vw;
 }
 
 #map-button{
     position: absolute;
-    top: .1em;
+    top: .1vw;
     left: 60%;
 }
 
 #have-header{
     position:absolute;
-    top:2em;
+    top:2vw;
     left: 30%;
-    font-size: 3em;
+    font-size: 3vw;
 }
 
 .team {
-    top:30em;
+    top:30vw;
 }
 
 #sign-in{
     position: absolute;
     left: 10%;
-    top: 2em;
-    font-size:3em;
+    top: 2vw;
+    font-size:3vw;
 }
 
 .sign-in-up{
     position:absolute;
     left: 10%;
-    top: 13em;
+    top: 9vw;
 }
 
 
 .contact{
     left:10%;
-    top: 8em;
+    top: 4vw;
     position:absolute;
-    line-height: 1.5em;
+    line-height: 2vw;
+    font-size:1.5vw;
 }
 
 .contact-form{
     left:10%;
     position:absolute;
-    top:15em;
+    top:13vw;
+    font-size:1vw;
+    line-height: 2vw;
+}
 }
 
 .contact-header{
 
-    font-size:2em;
-    top:2em;
+    font-size:2vw;
+    top:2vw;
 }
 
 .image-pin{
-    width: 10px;
-    height: 20px;
+    width: 1vw;
+    height: 2vw;
 }
 
 .have-need-header{
     position:absolute;
     left: 10%;
-    font-size: 2em;
-    top: 3em;
+    font-size: 2vw;
+    top: 3vw;
     font-size:
-    2em;
+    2vw;
 }
 
 li{
-    margin-top:1em;
+    margin-top:1vw;
 }
 
 .users {
-    height: 300px;
-    width: 300px;
-    display: inline;
+    height: 12vw;
+    width: 12vw;
+    /* display: inline; */
     clear: both;
     position: relative;
     border-radius: 50%;
@@ -282,14 +305,9 @@ li{
     padding: 20px;
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.jason1{
-    position: absolute;
-    left: 120%;
-    top:10em;
-}
 
 .team {
-    top:30em;
+    top:30vw;
 }
 
 .bio{
@@ -300,38 +318,45 @@ li{
 
 .team-header{
     position: absolute;
-    top:30em;
-    font-size: 2em;
+    top:30vw;
+    font-size: 2vw;
     left: 10%;
     margin-right:10%
 }
 
 .about-header{
     position:relative;
-    top: 3em;
+    top: 3vw;
     left: 10%;
-    line-height: 1.5em;
-    font-size: 1.87em;
-    width: 15em;
+    line-height: 2vw;
+    font-size: 1vw;
+    width: 15vw;
 }
 
 .racoon{
     position: absolute;
-    right: 10%;
-    top:10em;
+    left: 21vw;
+    top:8vw;
+    width: 10vw
 }
-
+.jason1{
+    position: absolute;
+    left: -5vw;
+    top:36vw;
+}
 .reed1{
-    position:absolute;
-    top: 35em;
+    position: absolute;
+    left: 24.5vw;
+    top:36vw;
 }
 
 .diego1{
-    position:absolute;
-    top: 78em;
-    left: 120%;
+    position: absolute;
+    left: 54vw;
+    top:36vw;
 }
 
 .lists{
-    width: 420px;
+    width: 20vw;
 }
+
