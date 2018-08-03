@@ -72,7 +72,7 @@ function codeAddressRed(){
 
 function interactGreenMarker(marker, index) {
   marker.info = new google.maps.InfoWindow({
-    content: greenPins[index].pinAddress + '<br>' + greenPins[index].pinEmail + '<br>' + greenPins[index].pinName + '<br>' + redPins[index].pinQuantity
+    content: greenPins[index].pinAddress + '<br>' + greenPins[index].pinEmail + '<br>' + greenPins[index].pinName + '<br>' + greenPins[index].pinQuantity
   });
   google.maps.event.addListener(marker, 'click',function() {
     marker.info.open(map,marker);
