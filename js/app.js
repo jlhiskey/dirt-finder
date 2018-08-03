@@ -104,10 +104,8 @@ User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinE
   //taking in information from the page, generates a pin object with necessary fields name email address avail, within the user. pushes to their pinform array.
 };
 // user val function that acts as a on-off switch to see if a user is active on the site or not.
-var userValidation = JSON.parse(localStorage.getItem('activeuser'));
-console.log(userValidation);
 var haveDirt = document.getElementById('have-need');
-//event listener that redirects the user if they do anything without being auth'd. 
+//event listener that redirects the user if they do anything without being auth'd.
 haveDirt.addEventListener('click', function(event){
 
   event.preventDefault();
@@ -117,33 +115,51 @@ haveDirt.addEventListener('click', function(event){
     alert('User must sign in or create a new account.');
     window.location.assign('signin.html');
   }
-  else { 
+  else {
     window.location.assign('pinform.html');
   }
 });
+if(document.getElementById('have-needindex')){
+  var haveDirtIndex = document.getElementById('have-needindex');
+  //event listener that redirects the user if they do anything without being auth'd.
+  haveDirtIndex.addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log('Have Need Clicked');
+    if (activeUser.userName === undefined) {
+      console.log('User Name Undefined');
+      alert('User must sign in or create a new account.');
+      window.location.assign('signin.html');
+    }
+    else {
+      window.location.assign('pinform.html');
+    }
+  });
+}
+if(document.getElementById('have-needmap')){
+  var haveDirtMap = document.getElementById('have-needmap');
+  //event listener that redirects the user if they do anything without being auth'd.
+  haveDirtMap.addEventListener('click', function (event) {
 
+    event.preventDefault();
+    console.log('Have Need Clicked');
+    if (activeUser.userName === undefined) {
+      console.log('User Name Undefined');
+      alert('User must sign in or create a new account.');
+      window.location.assign('signin.html');
+    }
+    else {
+      window.location.assign('pinform.html');
+    }
+  });
+}
 //handles logout button only on Main Page, might fix later.
-var logout = document.getElementById('logout');
-logout.addEventListener('click', function(event){
-  event.preventDefault();
-
-  activeUser = [];
-  localStorage.removeItem('activeuser');
-  
-  alert('You have been logged out');
-});
 
 
-
-var userValidation = JSON.parse(localStorage.getItem('activeuser'));
-console.log(userValidation);
 //basic logout function that removes active user.
 var logout = document.getElementById('logout');
 logout.addEventListener('click', function(event){
   event.preventDefault();
-
   activeUser = [];
   localStorage.removeItem('activeuser');
-  
   alert('You have been logged out');
 });
