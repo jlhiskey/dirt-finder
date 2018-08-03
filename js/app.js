@@ -1,9 +1,12 @@
 'use strict';
+// global variables. these get populated on each page load by initData() and represent a list of user objects, the user that 
+// is logged in, a list of pin objects, and a list of pin objects for each type of pin (green and red.) 
 var userList = [];
 var activeUser = [];
 var allPins = [];
 var greenPins = [];
 var redPins = [];
+//loads everything on page load. see map.js for what initMap(), geocode() and codeAddress() do.
 window.onload = function(){
   initData();
   console.log('list of users',userList );
@@ -13,7 +16,8 @@ window.onload = function(){
   codeAddress();
 };
 
-
+//loads data if it exists. we have to populate the arrays with the correct information and make sure that they have their user
+//inheritance, which is why we create new users and assign them new pins each time we init. 
 function initData(){
   if (localStorage.getItem('users')){
     var usedList = JSON.parse(localStorage.getItem('users'));
@@ -21,8 +25,6 @@ function initData(){
       new User(usedList[idx].userName, usedList[idx].userPhoneNumber, usedList[idx].pinCompanyName, usedList[idx].userEmail, usedList[idx].userPassword);
       userList[idx].pinform = usedList[idx].pinform;
     }
-
-    //SOMETHING ABOUT THIS IS FUCKY
   } else {
     userList = [];
   }
@@ -48,7 +50,7 @@ function initData(){
   }
 }
 
-
+// constructor function for the abstract concept of a 'user'.
 function User(userName, userPhoneNumber, userCompanyName, userEmail, userPassword) {
   this.userName = userName;
   this.userPhoneNumber = userPhoneNumber;
@@ -65,7 +67,7 @@ function User(userName, userPhoneNumber, userCompanyName, userEmail, userPasswor
 
 
 
-
+//constructor function for abstract object pin, that belongs to the user in case we need to see whose pin belongs to whom.
 User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability) {
   var pinform = {};
   pinform.pinName = pinName;
@@ -101,11 +103,11 @@ User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinE
 
   //taking in information from the page, generates a pin object with necessary fields name email address avail, within the user. pushes to their pinform array.
 };
-
-//works but needs to be refactored if time allows
+// user val function that acts as a on-off switch to see if a user is active on the site or not.
 var userValidation = JSON.parse(localStorage.getItem('activeuser'));
 console.log(userValidation);
 var haveDirt = document.getElementById('have-need');
+//event listener that redirects the user if they do anything without being auth'd. 
 haveDirt.addEventListener('click', function(event){
 
   event.preventDefault();
@@ -135,22 +137,7 @@ logout.addEventListener('click', function(event){
 
 var userValidation = JSON.parse(localStorage.getItem('activeuser'));
 console.log(userValidation);
-/* var haveDirt = document.getElementById('have-needindex');
-haveDirt.addEventListener('click', function(event){
-
-  event.preventDefault();
-  console.log('Have Need Clicked');
-  if (activeUser.userName === undefined){
-    console.log('User Name Undefined');
-    alert('Usermust Signin');
-    window.location.assign('signin.html');
-  }
-  else { 
-    window.location.assign('pinform.html');
-  }
-}); */
-
-//handles logout button only on Main Page, might fix later.
+//basic logout function that removes active user.
 var logout = document.getElementById('logout');
 logout.addEventListener('click', function(event){
   event.preventDefault();
