@@ -1,7 +1,7 @@
 body{
     background-color: rgb(250, 232, 208);
     font-family: 'Anton', sans-serif;
-    width: 100%;
+    width: 90%;
     height: 100%;
 }
 
@@ -22,13 +22,13 @@ header{
 
 }
 
-/* .line{
-    border-bottom: 3px solid black;
-    width: 440px;
-    top: 8vw;
+.line{
+    border-bottom: .5vw solid black;
+    width: 50vw;
+    top: 10vw;
     left:10%;
     position:relative;
-} */
+}
 
 
 .nav-bar{
@@ -36,7 +36,7 @@ header{
     top: 1.0vw;
     font-size: 1.2vw;
     line-height: 2.7vw;
-    right:10%;
+    right:10vw;
     cursor: pointer;
     
 }
@@ -84,19 +84,19 @@ main{
 
 #map {
   position: absolute;
-  left:40vw;
+  left:30vw;
   flex: 60%;
   height: 30vw;
   width: 40vw;
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-  top: 10vw;
+  top: 9.38vw;
 }
 
 .legend{
   position: absolute;
   text-align: center;
-  left: 50vw;
-  top: 13vw;
+  left: 39vw;
+  top: 12.3vw;
   flex: 10vw;
   height: 1vw;
   width: 7vw;
@@ -165,7 +165,7 @@ footer{
 .copyright{
     position: absolute;
     left:45%;
-    top: 10.5vw;
+    top: 9.8vw;
 }
 
 .copyright-about{
@@ -239,21 +239,25 @@ footer{
 .sign-in-up{
     position:absolute;
     left: 10%;
-    top: 10vw;
+    top: 9vw;
 }
 
 
 .contact{
     left:10%;
-    top: 8vw;
+    top: 4vw;
     position:absolute;
-    line-height: 1.5vw;
+    line-height: 2vw;
+    font-size:1.5vw;
 }
 
 .contact-form{
     left:10%;
     position:absolute;
-    top:15vw;
+    top:13vw;
+    font-size:1vw;
+    line-height: 2vw;
+}
 }
 
 .contact-header{
@@ -331,25 +335,25 @@ li{
 
 .racoon{
     position: absolute;
-    left: 25vw;
-    top:7vw;
+    left: 21vw;
+    top:8vw;
     width: 10vw
 }
 .jason1{
     position: absolute;
     left: -5vw;
-    top:37vw;
+    top:36vw;
 }
 .reed1{
     position: absolute;
     left: 24.5vw;
-    top:37vw;
+    top:36vw;
 }
 
 .diego1{
     position: absolute;
     left: 54vw;
-    top:37vw;
+    top:36vw;
 }
 
 .lists{
