@@ -72,7 +72,7 @@ function codeAddressRed(){
 
 function interactGreenMarker(marker, index) {
   marker.info = new google.maps.InfoWindow({
-    content: greenPins[index].pinAddress + '<br>' + greenPins[index].pinEmail + '<br>' + greenPins[index].pinPhoneNumber
+    content: greenPins[index].pinAddress + '<br>' + greenPins[index].pinEmail + '<br>' + greenPins[index].pinName + '<br>' + redPins[index].pinQuantity
   });
   google.maps.event.addListener(marker, 'click',function() {
     marker.info.open(map,marker);
@@ -81,7 +81,7 @@ function interactGreenMarker(marker, index) {
 
 function interactRedMarker(marker, index) {
   marker.info = new google.maps.InfoWindow({
-    content: redPins[index].pinAddress + '<br>' + redPins[index].pinEmail + '<br>' + redPins[index].pinPhoneNumber
+    content: redPins[index].pinAddress + '<br>' + redPins[index].pinEmail + '<br>' + redPins[index].pinName + '<br>' + redPins[index].pinQuantity
   });
   google.maps.event.addListener(marker, 'click', function () {
     marker.info.open(map, marker);
