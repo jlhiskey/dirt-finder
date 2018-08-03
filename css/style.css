@@ -141,8 +141,11 @@ main{
 #have-needmap{
     position:absolute;
     top: 38vw;
-    left:40vw;
+    left:35vw;
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 2vw;
+    font-size: 1.2vw;
+    line-height: 2vw;
 }
 
 .team{
@@ -258,7 +261,7 @@ footer{
     font-size:1vw;
     line-height: 2vw;
 }
-}
+
 
 .contact-header{
 
