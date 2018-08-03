@@ -105,7 +105,7 @@ User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinE
 //works but needs to be refactored if time allows
 var userValidation = JSON.parse(localStorage.getItem('activeuser'));
 console.log(userValidation);
-var haveDirt = document.getElementById('have-need');
+var haveDirt = document.getElementByName('have-need');
 haveDirt.addEventListener('click', function(event){
 
   event.preventDefault();
