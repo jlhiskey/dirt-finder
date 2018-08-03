@@ -87,7 +87,7 @@ User.prototype.makePin = function (pinName, pinPhoneNumber, pinCompanyName, pinE
       localStorage.setItem('activeuser', JSON.stringify(this));
       localStorage.setItem('users', JSON.stringify(userList));
       allPins.push(pinform);
-      if (pinform.pinHaveNeed === 'have'){
+      if (pinform.pinHaveNeed === 'need'){
         greenPins.push(pinform);
         localStorage.setItem('greenpins', JSON.stringify(greenPins));
       } else {
