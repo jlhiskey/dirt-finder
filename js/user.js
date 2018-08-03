@@ -1,6 +1,6 @@
 'use strict';
 
-
+//user login function relegated to its own JS page so it doesn't randomly break the signup function.
 
 var userFormEl = document.getElementById('new-user-form'); // looks for the html id main-form
 userFormEl.addEventListener('submit', function(event) { //when submit is clicked run event this is below

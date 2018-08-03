@@ -18,11 +18,11 @@ pinFormEl.addEventListener('submit', function(event) { //when submit is clicked 
 
   if ((pinName === '') || (pinEmail === '') || (pinAddress === '')){
     alert('Pin Name, Pin Email and Address are Required Fields');
-  } else {
+  } else { //if the user adds nec information, make a pin and add it to either greens or reds.
     activeUser.makePin(pinName, pinPhoneNumber, pinCompanyName, pinEmail, pinHaveNeed, pinAddress, pinQuantity, pinDirtType, pinDensity, pinAvaliability);
     window.location.assign('map.html');
     //where to put the input data
-    for (var idx in userList){
+    for (var idx in userList){ //for loop to store the data in the correct position
       if (userList[idx].userName === activeUser.userName){
         console.log('yes')
         userList[idx].pinform = activeUser.pinform;
@@ -30,11 +30,7 @@ pinFormEl.addEventListener('submit', function(event) { //when submit is clicked 
         localStorage.setItem('activeuser', JSON.stringify(activeUser));
       }
     }
-    
-    
+     
   }
-
-
-  //window.location.assign('map.html');
 
 });

@@ -11,11 +11,8 @@ signIn.addEventListener('submit', function(event){
 
   var useremail = event.target.UserEmail.value;
   var password = event.target.UserPassword.value;
-  console.log(useremail);
-  console.log(password);
   for (var idx in userList){
     if( useremail === userList[idx].userEmail && password === userList[idx].userPassword){
-      console.log('this happened.');
       activeUser = userList[idx];
       localStorage.setItem('activeuser', JSON.stringify(activeUser));
 
@@ -28,8 +25,6 @@ signIn.addEventListener('submit', function(event){
     }
   }
   if (!userAuth) alert('Incorrect Username or Password');
-  console.log(userList);
-  console.log(userAuth);
 });
 
 
